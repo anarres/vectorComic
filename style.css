@@ -243,9 +243,18 @@ div#dialog2 {
     height: 28px;
     overflow: hidden;
 }
-#bubble1 img, #bubble2 img {
-    width: 20px;
-    height: 20px;
+
+button#bubble1 {    
+    background-image: url('images/bubbleIconRight.svg');
+    background-size: contain;
+    width:25px;
+    height: 25px;
+}
+button#bubble2 {    
+    background-image: url('images/bubbleIconLeft.svg');
+    background-size: contain;
+    width:25px;
+    height: 25px;
 }
  #showFaces1 img, #showFaces2 img {
     width: 44px;

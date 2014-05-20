@@ -334,19 +334,20 @@ controllers: {
             COMIC.controllers.refreshPreview();
             }, false);
 
+        /*
         document.getElementById("zoomMinus").addEventListener("click", function() {
             if (COMIC.model.scaleFactor >= 0.4) {
                 COMIC.model.scaleFactor -= 0.1;
                 COMIC.controllers.refreshPreview();
             }
         }, false);
-
         document.getElementById("zoomPlus").addEventListener("click", function() {
             if (COMIC.model.scaleFactor <= 2.0) {
                 COMIC.model.scaleFactor += 0.1;
                 COMIC.controllers.refreshPreview();
             }
         }, false);
+        */
 
         document.getElementById("saveImage").addEventListener("click", function() {
 

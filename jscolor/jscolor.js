@@ -1,11 +1,11 @@
 /**
  * jscolor, JavaScript Color Picker
  *
- * @version 1.4.0
+ * @version 1.4.2
  * @license GNU Lesser General Public License, http://www.gnu.org/copyleft/lesser.html
  * @author  Jan Odvarko, http://odvarko.cz
  * @created 2008-06-15
- * @updated 2012-07-06
+ * @updated 2013-11-25
  * @link    http://jscolor.com
  */
 
@@ -318,10 +318,10 @@ var jscolor = {
 	},
 
 
-	/*
-	 * Usage example:
-	 * var myColor = new jscolor.color(myInputElement)
-	 */
+	//
+	// Usage example:
+	// var myColor = new jscolor.color(myInputElement)
+	//
 
 	color : function(target, prop) {
 
@@ -389,10 +389,6 @@ var jscolor = {
 					default:     a=0; b=1; c=1; break;
 				}
 				var l = (ts[b]+ps[b])/2;
-
-
-///////
-
 
 				// picker pos
 				if (!this.pickerSmartPosition) {
@@ -631,6 +627,23 @@ var jscolor = {
 					dispatchImmediateChange();
 				}
 			};
+			if('ontouchstart' in window) { // if touch device
+				var handle_touchmove = function(e) {
+					var event={
+						'offsetX': e.touches[0].pageX-touchOffset.X,
+						'offsetY': e.touches[0].pageY-touchOffset.Y
+					};
+					if (holdPad || holdSld) {
+						holdPad && setPad(event);
+						holdSld && setSld(event);
+						dispatchImmediateChange();
+					}
+					e.stopPropagation(); // prevent move "view" on broswer
+					e.preventDefault(); // prevent Default - Android Fix (else android generated only 1-2 touchmove events)
+				};
+				p.box.removeEventListener('touchmove', handle_touchmove, false)
+				p.box.addEventListener('touchmove', handle_touchmove, false)
+			}
 			p.padM.onmouseup =
 			p.padM.onmouseout = function() { if(holdPad) { holdPad=false; jscolor.fireEvent(valueElement,'change'); } };
 			p.padM.onmousedown = function(e) {
@@ -639,17 +652,43 @@ var jscolor = {
 					case 0: if (THIS.hsv[2] === 0) { THIS.fromHSV(null, null, 1.0); }; break;
 					case 1: if (THIS.hsv[1] === 0) { THIS.fromHSV(null, 1.0, null); }; break;
 				}
+				holdSld=false;
 				holdPad=true;
 				setPad(e);
 				dispatchImmediateChange();
 			};
+			if('ontouchstart' in window) {
+				p.padM.addEventListener('touchstart', function(e) {
+					touchOffset={
+						'X': e.target.offsetParent.offsetLeft,
+						'Y': e.target.offsetParent.offsetTop
+					};
+					this.onmousedown({
+						'offsetX':e.touches[0].pageX-touchOffset.X,
+						'offsetY':e.touches[0].pageY-touchOffset.Y
+					});
+				});
+			}
 			p.sldM.onmouseup =
 			p.sldM.onmouseout = function() { if(holdSld) { holdSld=false; jscolor.fireEvent(valueElement,'change'); } };
 			p.sldM.onmousedown = function(e) {
+				holdPad=false;
 				holdSld=true;
 				setSld(e);
 				dispatchImmediateChange();
 			};
+			if('ontouchstart' in window) {
+				p.sldM.addEventListener('touchstart', function(e) {
+					touchOffset={
+						'X': e.target.offsetParent.offsetLeft,
+						'Y': e.target.offsetParent.offsetTop
+					};
+					this.onmousedown({
+						'offsetX':e.touches[0].pageX-touchOffset.X,
+						'offsetY':e.touches[0].pageY-touchOffset.Y
+					});
+				});
+			}
 
 			// picker
 			var dims = getPickerDims(THIS);
@@ -657,8 +696,7 @@ var jscolor = {
 			p.box.style.height = dims[1] + 'px';
 
 			// picker border
-			//p.boxB.style.position = 'absolute';
-			p.boxB.style.position = 'fixed';
+			p.boxB.style.position = 'absolute';
 			p.boxB.style.clear = 'both';
 			p.boxB.style.left = x+'px';
 			p.boxB.style.top = y+'px';
@@ -677,13 +715,6 @@ var jscolor = {
 			p.padB.style.top = THIS.pickerFace+'px';
 			p.padB.style.border = THIS.pickerInset+'px solid';
 			p.padB.style.borderColor = THIS.pickerInsetColor;
-
-
-
-
-//////
-
-
 
 			// pad mouse area
 			p.padM.style.position = 'absolute';
@@ -746,6 +777,10 @@ var jscolor = {
 			};
 			p.btnS.style.lineHeight = p.btn.style.height;
 
+
+
+            // anarres custom hack - image data uri's to reduce HTTP requests
+/*
 			// load images in optimal order
 			switch(modeID) {
 				case 0: var padImg = 'hs.png'; break;
@@ -756,6 +791,17 @@ var jscolor = {
 			p.sldM.style.backgroundImage = "url('"+jscolor.getDir()+"arrow.gif')";
 			p.sldM.style.backgroundRepeat = "no-repeat";
 			p.pad.style.backgroundImage = "url('"+jscolor.getDir()+padImg+"')";
+			p.pad.style.backgroundRepeat = "no-repeat";
+			p.pad.style.backgroundPosition = "0 0";
+*/
+
+			p.padM.style.backgroundImage = "url('data:image/gif;base64,R0lGODlhDwAPAKEBAAAAAP///////////yH5BAEKAAIALAAAAAAPAA8AAAIklB8Qx53b4otSUWcvyiz4/4AeQJbmKY4p1HHapBlwPL/uVRsFADs=')";
+			p.padM.style.backgroundRepeat = "no-repeat";
+
+			p.sldM.style.backgroundImage = "url('data:image/gif;base64,R0lGODlhBwALAKECAAAAAP///6g8eKg8eCH5BAEKAAIALAAAAAAHAAsAAAITTIQYcLnsgGxvijrxqdQq6DRJAQA7')";
+			p.sldM.style.backgroundRepeat = "no-repeat";
+
+			p.pad.style.backgroundImage = "url('data:image/png;base64,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')";
 			p.pad.style.backgroundRepeat = "no-repeat";
 			p.pad.style.backgroundPosition = "0 0";
 
@@ -908,7 +954,8 @@ var jscolor = {
 			styleElement = jscolor.fetchElement(this.styleElement);
 		var
 			holdPad = false,
-			holdSld = false;
+			holdSld = false,
+			touchOffset = {};
 		var
 			leaveValue = 1<<0,
 			leaveStyle = 1<<1,
@@ -949,12 +996,16 @@ var jscolor = {
 		}
 
 		// require images
+        // anarres hack - don't require images!
+
+/*
 		switch(modeID) {
 			case 0: jscolor.requireImage('hs.png'); break;
 			case 1: jscolor.requireImage('hv.png'); break;
 		}
 		jscolor.requireImage('cross.gif');
 		jscolor.requireImage('arrow.gif');
+*/
 
 		this.importColor();
 	}

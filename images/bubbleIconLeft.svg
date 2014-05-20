@@ -13,7 +13,7 @@
      sodipodi:version="0.32"
      width="28"
      height="28"
-     sodipodi:docname="bubbleIconRight.svg"
+     sodipodi:docname="bubbleIconLeft.svg"
      inkscape:version="0.48.3.1 r9886"
      inkscape:output_extension="org.inkscape.output.svg.inkscape"
      version="1.1">
@@ -21,8 +21,8 @@
          id="defs550" />
     <sodipodi:namedview
          id="base"
-         inkscape:zoom="3"
-         inkscape:cx="-99.588268"
+         inkscape:zoom="4"
+         inkscape:cx="-23.871761"
          inkscape:cy="-5.2069345"
          inkscape:window-width="1920"
          inkscape:window-height="1124"
@@ -39,7 +39,7 @@
     <path
          id="path795"
          d="m 14.242084,3.3085211 c 5.183567,0.0859 9.755699,3.065034 10.726404,7.2911689 1.109378,4.829866 -2.903098,9.467931 -8.956982,10.353007 l -0.06072,-0.0032 -0.03325,0.02757 0.13733,0.0048 L 7.4563966,25.15 10.941755,20.756956 C 6.7546586,19.803485 3.8192776,17.224612 3.0342826,13.807 1.9249056,8.9771337 5.9388286,4.3390691 11.992712,3.4539942 12.749448,3.3433621 13.501567,3.2963591 14.242077,3.3086321 z m -3.278637,17.4498449 -0.01301,0 0,0.02295 0.01301,-0.02295 z"
-         style="font-size:12px;fill:#c9edd8;fill-opacity:1;fill-rule:evenodd;stroke:#404040;stroke-width:1.70000005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         style="font-size:12px;fill:#c9edd8;fill-opacity:0.6940639;fill-rule:evenodd;stroke:#404040;stroke-width:1.70000005000000010;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;opacity:1"
          inkscape:connector-curvature="0" />
     <metadata
          id="metadata9">
@@ -56,7 +56,7 @@
                         <dc:title>Open Clip Art Library</dc:title>
                     </cc:Agent>
                 </dc:publisher>
-                <dc:title></dc:title>
+                <dc:title />
                 <dc:date>2008-02-14T14:11:52</dc:date>
                 <dc:description>A round speech bubble</dc:description>
                 <dc:source>http://openclipart.org/detail/13953/callout-round-right-by-nicubunu</dc:source>

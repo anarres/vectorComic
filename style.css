@@ -243,7 +243,6 @@ div#dialog2 {
     height: 28px;
     overflow: hidden;
 }
-
 button#bubble1 {    
     background-image: url('images/bubbleIconRight.svg');
     background-size: contain;

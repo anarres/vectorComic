@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     height="69"
+     id="svg1"
+     inkscape:version="0.48.3.1 r9886"
+     sodipodi:docname="publicDomainIcon-add.svg"
+     sodipodi:version="0.32"
+     version="1.0"
+     width="69"
+     x="0"
+     y="0">
+    <metadata
+         id="metadata3">
+        <rdf:RDF>
+            <cc:Work
+                 rdf:about="">
+                <dc:title>Part of the Flat Icon Collection (Wed Aug 25 23:29:46 2004)</dc:title>
+                <dc:description />
+                <dc:subject>
+                    <rdf:Bag>
+                        <rdf:li>hash</rdf:li>
+                        <rdf:li />
+                        <rdf:li>action</rdf:li>
+                        <rdf:li>computer</rdf:li>
+                        <rdf:li>icons</rdf:li>
+                        <rdf:li>theme</rdf:li>
+                    </rdf:Bag>
+                </dc:subject>
+                <dc:publisher>
+                    <cc:Agent
+                         rdf:about="http://www.openclipart.org">
+                        <dc:title>Danny Allen</dc:title>
+                    </cc:Agent>
+                </dc:publisher>
+                <dc:creator>
+                    <cc:Agent>
+                        <dc:title>Danny Allen</dc:title>
+                    </cc:Agent>
+                </dc:creator>
+                <dc:rights>
+                    <cc:Agent>
+                        <dc:title>Danny Allen</dc:title>
+                    </cc:Agent>
+                </dc:rights>
+                <dc:date />
+                <dc:format>image/svg+xml</dc:format>
+                <dc:type
+                     rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                <cc:license
+                     rdf:resource="http://web.resource.org/cc/PublicDomain" />
+                <dc:language>en</dc:language>
+            </cc:Work>
+            <cc:License
+                 rdf:about="http://web.resource.org/cc/PublicDomain">
+                <cc:permits
+                     rdf:resource="http://web.resource.org/cc/Reproduction" />
+                <cc:permits
+                     rdf:resource="http://web.resource.org/cc/Distribution" />
+                <cc:permits
+                     rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+            </cc:License>
+        </rdf:RDF>
+    </metadata>
+    <sodipodi:namedview
+         bordercolor="#666666"
+         borderopacity="1.0"
+         id="base"
+         inkscape:cx="-37.758681"
+         inkscape:cy="33.818878"
+         inkscape:pageopacity="0.0"
+         inkscape:pageshadow="2"
+         inkscape:window-height="1124"
+         inkscape:window-width="1920"
+         inkscape:window-x="0"
+         inkscape:window-y="24"
+         inkscape:zoom="5"
+         pagecolor="#ffffff"
+         showguides="true"
+         snaptoguides="true"
+         showgrid="false"
+         inkscape:window-maximized="1"
+         inkscape:current-layer="svg1"
+         fit-margin-top="0"
+         fit-margin-left="0"
+         fit-margin-right="0"
+         fit-margin-bottom="0" />
+    <defs
+         id="defs3">
+        <linearGradient
+             id="linearGradient575">
+            <stop
+                 id="stop576"
+                 offset="0"
+                 style="stop-color:#000;stop-opacity:1;" />
+            <stop
+                 id="stop577"
+                 offset="1"
+                 style="stop-color:#fff;stop-opacity:1;" />
+        </linearGradient>
+        <linearGradient
+             id="linearGradient578"
+             xlink:href="#linearGradient575" />
+    </defs>
+    <path
+         d="m 28.555695,28.671185 0,-13.333964 c 0,-1.865298 0.510041,-3.380852 1.530127,-4.546664 1.020084,-1.194956 2.477349,-1.792435 4.371792,-1.792435 1.894443,0 3.351706,0.597479 4.371792,1.792435 1.04923,1.165812 1.573844,2.681366 1.573844,4.546664 l 0,13.333964 13.159095,0 c 1.923588,0 3.439143,0.524616 4.546663,1.573846 1.136666,1.020085 1.704998,2.462776 1.704998,4.328074 0,1.894443 -0.568332,3.366279 -1.704998,4.415509 -1.10752,1.04923 -2.623075,1.573846 -4.546663,1.573846 l -13.159095,0 0,13.290246 c 0,1.894444 -0.524614,3.424571 -1.573844,4.590382 -1.04923,1.165811 -2.506494,1.748717 -4.371792,1.748717 -1.865298,0 -3.322562,-0.582906 -4.371792,-1.748717 -1.020086,-1.165811 -1.530127,-2.695938 -1.530127,-4.590382 l 0,-13.290246 -13.159094,0 c -1.865298,0 -3.380852,-0.568333 -4.546664,-1.704999 -1.1366656,-1.165812 -1.7049985,-2.59393 -1.7049985,-4.284356 0,-1.865298 0.5537603,-3.307989 1.6612805,-4.328074 1.136666,-1.04923 2.666794,-1.573846 4.590382,-1.573846 l 13.159094,0 z"
+         id="path837"
+         style="font-size:12px;font-weight:900;fill:#a3ff03;fill-opacity:1;stroke:#236200;stroke-width:3;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:VAG Rounded Black SSi"
+         inkscape:connector-curvature="0" />
+    <path
+         style="fill:#eeeecc;fill-opacity:1;stroke:none"
+         d="M 0,0 0,69 69,69 69,0 0,0 z m 28.9375,4.46875 10.09375,0 c 14.1244,0 25.5,12.37072 25.5,27.75 l 0,5.5625 c 0,15.37928 -11.3756,27.75 -25.5,27.75 l -10.09375,0 c -14.1244,0 -25.5,-12.37072 -25.5,-27.75 l 0,-5.5625 c 0,-15.37928 11.3756,-27.75 25.5,-27.75 z"
+         id="rect4279-4"
+         inkscape:connector-curvature="0" />
+    <rect
+         style="fill:none;stroke:#222222;stroke-width:2;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3769"
+         width="61.072956"
+         height="61.072956"
+         x="3.4635224"
+         y="4.4635215"
+         rx="25.49531"
+         ry="27.760433" />
+</svg>

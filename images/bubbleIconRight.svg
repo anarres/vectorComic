@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     id="svg548"
+     sodipodi:version="0.32"
+     width="23.999407"
+     height="23.514557"
+     sodipodi:docname="bubbleIconRight.svg"
+     inkscape:version="0.48.3.1 r9886"
+     inkscape:output_extension="org.inkscape.output.svg.inkscape"
+     version="1.1">
+    <defs
+         id="defs550" />
+    <sodipodi:namedview
+         id="base"
+         inkscape:zoom="5"
+         inkscape:cx="-99.588268"
+         inkscape:cy="-5.2069345"
+         inkscape:window-width="1920"
+         inkscape:window-height="1124"
+         inkscape:window-x="0"
+         inkscape:window-y="24"
+         showgrid="false"
+         inkscape:current-layer="svg548"
+         fit-margin-top="0"
+         fit-margin-left="0"
+         fit-margin-right="0"
+         fit-margin-bottom="0"
+         inkscape:window-maximized="1" />
+    <path
+         id="path795"
+         d="M 11.750102,0.84448094 C 6.5665343,0.93038094 1.9944022,3.909515 1.0236969,8.1356496 -0.08568071,12.965516 3.926795,17.603581 9.9806792,18.488657 l 0.06072,-0.0032 0.03325,0.02757 -0.1373308,0.0048 8.5984698,4.168133 -3.485358,-4.393044 C 19.237526,17.339445 22.172907,14.760572 22.957902,11.34296 24.06728,6.5130936 20.053357,1.875029 13.999474,0.98995404 13.242738,0.87932194 12.490619,0.83231894 11.750109,0.84459194 z m 3.278637,17.44984506 0.01301,0 0,0.02295 -0.01301,-0.02295 z"
+         style="font-size:12px;fill:#c9edd8;fill-rule:evenodd;stroke:#404040;stroke-width:1.69999999999999996;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;fill-opacity:1"
+         inkscape:connector-curvature="0" />
+    <metadata
+         id="metadata9">
+        <rdf:RDF>
+            <cc:Work>
+                <dc:format>image/svg+xml</dc:format>
+                <dc:type
+                     rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                <cc:license
+                     rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+                <dc:publisher>
+                    <cc:Agent
+                         rdf:about="http://openclipart.org/">
+                        <dc:title>Open Clip Art Library</dc:title>
+                    </cc:Agent>
+                </dc:publisher>
+                <dc:title />
+                <dc:date>2008-02-14T14:11:52</dc:date>
+                <dc:description>A round speech bubble</dc:description>
+                <dc:source>http://openclipart.org/detail/13953/callout-round-right-by-nicubunu</dc:source>
+                <dc:creator>
+                    <cc:Agent>
+                        <dc:title>nicubunu</dc:title>
+                    </cc:Agent>
+                </dc:creator>
+                <dc:subject>
+                    <rdf:Bag>
+                        <rdf:li>bubble</rdf:li>
+                        <rdf:li>bubble</rdf:li>
+                        <rdf:li>callout</rdf:li>
+                        <rdf:li>callout</rdf:li>
+                        <rdf:li>clip art</rdf:li>
+                        <rdf:li>clipart</rdf:li>
+                        <rdf:li>image</rdf:li>
+                        <rdf:li>media</rdf:li>
+                        <rdf:li>png</rdf:li>
+                        <rdf:li>public domain</rdf:li>
+                        <rdf:li>speech</rdf:li>
+                        <rdf:li>speech</rdf:li>
+                        <rdf:li>svg</rdf:li>
+                    </rdf:Bag>
+                </dc:subject>
+            </cc:Work>
+            <cc:License
+                 rdf:about="http://creativecommons.org/licenses/publicdomain/">
+                <cc:permits
+                     rdf:resource="http://creativecommons.org/ns#Reproduction" />
+                <cc:permits
+                     rdf:resource="http://creativecommons.org/ns#Distribution" />
+                <cc:permits
+                     rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+            </cc:License>
+        </rdf:RDF>
+    </metadata>
+</svg>

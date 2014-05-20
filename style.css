@@ -1,0 +1,402 @@
+/* RESET */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 16px;
+    color: #222;
+}
+
+/* TYPOGRAPHY and general styles */
+
+h1,h2,h3,h4,h5,h6 { 
+    font-weight: normal;
+    text-align: left;
+}
+h1 {
+    font-size: 2em;
+    padding: 5px 0px;
+}
+h2,h3,h4,h5,h6 {
+    font-size: 1.1em;
+    line-height:1em;
+    padding: 0px;
+    margin: 0px;
+}
+a {
+    text-decoration: none;
+    font-weight: normal;
+    color: #047;
+}
+a:hover {
+    color: #14C3C9;
+    color: red;
+}
+button {
+    background-color: #eec;
+    padding: 0px 1px;
+    margin: 1px 4px;
+    float: left;
+    border: 1px solid #574332;
+    border-right: 1px solid #222;
+    border-bottom: 1px solid #222;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align:center;
+    max-height: 50px;
+    overflow: hidden;
+}
+button:hover {
+    background-color: #FFE747;
+    border: 1px solid #aa4;
+    border-right: 1px solid #882;
+    border-bottom: 1px solid #882;
+}
+
+input {
+    border-radius: 3px;
+    border: 1px solid #574332;
+    padding: 1px 2px;
+}
+th {
+    font-size: 1em;
+    font-weight: normal;
+}
+tr {
+    border-top: 2px solid #fff;
+}
+td {
+    padding: 0px 4px;
+}
+svg {
+    display: block;
+    margin: 0px auto;
+}
+
+
+/* BOXES, page layout */
+
+html {
+    width: 100%;
+    background-color: #fff;
+    //background-image: url('images/pat2.svg');
+    background-repeat: repeat;
+}
+#container {
+    max-width: 600px;
+    margin: 0px auto;
+    background-color: #fff;
+}
+#innerContainer {
+    margin: 0px 10px;
+}
+
+/* SPECIFIC */
+
+#header img {
+    width: 100%;
+    height: auto;
+}
+#top {
+    height: 2px;
+    clear: both;
+}
+
+/* Menu */
+
+ul#menu li {
+    list-style: url('images/foo.svg');
+    padding: 0px;
+    margin-left: 20px;
+}
+ul#menu a {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+/* COLOR CHOOSER */
+
+div#colorButton {
+    display: block;
+    background-color: #eec;
+    float: left;
+    border: 1px solid #574332;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden; 
+    float: right;
+    margin: 2px;
+    margin-top: 0px;
+    padding-top: 1px;
+    border: none;
+    background-color: #fff;
+}
+div#colorButton p {
+    font-size: 0.9em;
+    padding: 0px;
+}
+div#colorButton input {
+    border: 1px solid #999;
+    padding: 2px 8px;
+    text-align: center;
+    cursor: text;
+}
+
+/* LINK TO TOP */
+
+#linkToTopDiv {
+    float: right;
+    margin-right:50px;
+}
+a#linkToTop {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    border-radius: 20px;
+    clear: both;
+    padding: 7px;
+    padding-top:3px;
+    padding-bottom: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #eec;
+    border: 2px solid #574332;
+}
+a#linkToTop:hover {
+    background-color: #fff;
+}
+
+/* Panel interface thingie */
+
+#panelInterface {
+    border: 1px solid #574332;
+    padding: 3px 0px;
+    border-radius: 9px;
+    padding-bottom:0;
+    background-color: #eec;    
+}
+div#panelNumDiv {
+    font-size: 1.4em;
+    display: inline;
+    padding-left: 10px;
+    text-align: left;
+}
+img#decreasePanelNum, img#increasePanelNum {
+    width: 15px;
+    height: 25px;
+    cursor:pointer;
+    vertical-align: middle;
+}
+img.notGreyedOut, button.notGreyedOut {
+    background-color: #eec;
+}
+img.notGreyedOut:hover, button.notGreyedOut:hover {
+    background-color: #FFE747;
+}
+img.greyedOut, button.greyedOut {
+    background-color:  #ddd;
+}
+input#panelNum {
+    text-align: center;
+    font-size: 1em;
+    padding: 0px;
+    margin: 0px 0px 0px 0px;
+}
+button#deletePanel, button#newPanel {
+    padding: 0px;
+    margin: 0px 4px;
+    border: none;
+    float: right;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+button#deletePanel {
+    background-image: url('images/publicDomainIcon-delete.svg');
+}
+button#newPanel {
+    background-image: url('images/publicDomainIcon-add.svg');
+}
+button#newPanel:hover {
+    background-color: #FFE747;
+}
+div#dialog1 {
+    float: left;
+    width: 50%;
+    background-color: #eec;
+}
+div#dialog2 {
+    float: right;
+    width: 50%;
+    background-color: #eec;
+}
+#bubble1, #bubble2, #showFaces1, #showFaces2 {
+    padding: 1px 2px;
+    padding-bottom: 0px;
+    margin: 0px;
+    margin-right: 2px;
+    margin-left: 2px;
+    height: 28px;
+    overflow: hidden;
+}
+#bubble1 img, #bubble2 img {
+    width: 20px;
+    height: 20px;
+}
+ #showFaces1 img, #showFaces2 img {
+    width: 44px;
+    height: 22px;
+}
+#dialog1 textarea, #dialog2 textarea {
+    width: 92%;
+    height: 70px;
+    border-radius: 2px;
+    border: 1px solid #bbb;
+    padding: 4px;
+    margin: 2px;
+    margin-bottom: 0px;
+    font-size: 1em;
+    line-height: 1.2em;
+}
+
+/* Preview */
+
+#previewDiv {
+    clear: both;
+}
+#previewBox {
+    height: 200px;
+    overflow: hidden;
+    clear: both;
+}
+img#zoomPlus, img#zoomMinus {
+    float: right;
+    cursor: pointer;
+}
+img#zoomPlus:hover, img#zoomMinus:hover {
+}
+#svgGoesHere {
+    display: block;
+}
+
+/* CHARACTERS SELECTION */
+
+div#charactersDiv {
+    border-radius: 9px;
+    border: 1px solid #574332;
+    background-color: #eec;
+    padding: 2px 0px;
+}
+div#character1Container {
+    width: 48%;
+    float:left;
+}
+div#character2Container {
+    width: 48%; 
+    float:right;
+    padding-left: 2px;
+    border-left: 1px dashed #574332;
+}
+#charactersDiv h2 {
+    text-align: center;
+    padding: 4px;
+}
+img.character1NotSelected, img.character2NotSelected, img.character1Selected, img.character2Selected {
+    width: 40px;
+    height: 40px;
+    margin: 0px 2px;
+    cursor: pointer;
+}
+img.character1NotSelected, img.character2NotSelected {
+    border: 1px solid #ddb;
+    border-radius: 5px;
+}
+img.character1Selected, img.character2Selected {
+    border: 1px solid #AB9400;
+    background-color: #ee4;
+    border-radius: 5px;
+}
+
+img.character1NotSelected:hover, img.character2NotSelected:hover {
+    background-color: #ee4;
+}
+
+/* SAVE IMAGE */
+
+#saveDiv h3 {
+    font-size: 1.3em;
+}
+button#saveImage {
+    margin: 6px 2px;
+    padding: 5px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+div#description {
+    font-size: 0.8em;
+}
+#imageGenerationFoo {
+    opacity: 0;
+    transition: opacity 1s;
+    background-color: #eec;
+    padding: 0px 2px;
+}
+#imageContainer {
+    margin:10px 0px;
+    width: 100%;
+    padding: 6px;
+    height: 20px;
+    transition: height 2s;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+#imageContainer img {
+    display: inline;
+}
+
+/* FAQ */
+
+div#faq {
+    clear: both;
+    margin-top: 30px;
+}
+div#faq h2 {
+    font-size: 1.6em;
+    padding: 7px 0px;
+}
+div#faq h3 {
+    font-size: 1em;
+    font-weight: bold;
+    padding: 5px 0px;
+    padding-top: 10px;
+}
+div#faq p {
+    padding: 5px 0px;
+}
+
+/* FOOTER */
+
+footer {
+    clear:both;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding: 20px;
+    color: #fff;
+    background-color: #574332;
+    border-radius: 5px;
+}
+footer p {
+    text-align: center;
+}
+footer a {
+    color: #eee;
+}
+footer a:hover {
+    color: #eee;
+    text-decoration: underline;
+}
+

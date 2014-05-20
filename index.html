@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>Foofurple comics!</title>
+<meta name="description" content="Make your own web comic! Tell a story with word bubbles and free, public domain cartoon characters.">
+<link rel="icon" type="image/png" href="FIXME.png">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<script type="text/javascript" src="jscolor/jscolor.js"></script>
+<script type="text/javascript" src="characters.js"></script>
+<script type="text/javascript" src="comic.js"></script>
+
+</head>
+
+<body onload="COMIC.init()">
+
+<div id="container">
+<div id="innerContainer">
+
+<div id="top"></div>
+
+<div id="header">
+    <img src="images/foofurpleComicLogo.svg"
+    alt="Foofurpe COMIC: for all your public domain web comic needs">
+</div> <!--#header-->
+
+<div id="colorButton">
+    <p>Background color:</p>
+    <input type="text" class="color" value="AAE3E3" id="jscolor" size="6" >
+</div>
+
+<ul id="menu">
+    <li><a href="#charactersDiv">Characters</a></li>
+    <li><a href="#saveDiv">Save</a></li>
+    <li><a href="#faq">FAQ</a></li>
+</ul>
+
+<div id="linkToTopDiv">
+    <a href="#top"  id="linkToTop">
+        Top
+        <img src="images/publicDomainIcon-curvyArrowUp.svg">
+    </a>
+</div>
+
+<div style="clear:both;height:5px;"></div>
+
+<div id="panelInterface">
+
+    <div id="panelEditor">
+        <div id="panelNumDiv">
+            Panel: <img id="decreasePanelNum" src='images/backwardTriangle.svg' title="Previous panel" class="notGreyedOut"><input type="text" value="1" size="1" id="panelNum"><img id="increasePanelNum" src='images/forwardTriangle.svg' title="Next panel" class="notGreyedOut">
+        </div>
+        <button id="deletePanel" title="Delete panel" class="notGreyedOut"></button>
+        <button id="newPanel" title="New panel"></button>
+        <div style="clear:both;"></div>
+    </div> <!-- #panelEditor  -->
+
+    <div id="dialog1" >
+        <textarea id="character1Text"></textarea>
+            <button id="bubble1" title="Bubbles">
+                <img src="images/bubbleIconRight.svg">
+            </button>
+            <button id="showFaces1" title="Faces">
+                <img src="images/qubodupEmoticons.svg" width="50" height="25">
+            </button>
+            <div style="clear:both;"></div>
+    </div> <!-- #dialog1 -->
+
+    <div id="dialog2">
+        <textarea id="character2Text"></textarea>
+            <button id="bubble2" title="Bubbles">
+                <img src="images/bubbleIconLeft.svg" width="25" height="25">
+            </button>
+            <button id="showFaces2" title="Faces">
+                <img src="images/qubodupEmoticons.svg"  width="50" height="25">
+            </button>
+            <div style="clear:both;"></div>
+    </div> <!-- #dialog2 -->
+
+    <div id="previewDiv">
+        <div id="previewBox">
+            <div id="svgGoesHere"></div>
+            <div style="clear:both;"></div>
+        </div>
+        <div style="clear:both;"></div>
+    </div> <!-- #previewDiv -->
+
+    <div style="display:none;">
+        <img id="zoomPlus" src="images/publicDomainIcon-zoomIn.svg">
+        <img id="zoomMinus" src="images/publicDomainIcon-zoomOut.svg">
+    </div>
+    <div style="clear:both;"></div>
+
+</div> <!-- #panelInterface -->
+
+<div style="height:30px; clear:both;"></div>
+
+<div id="charactersDiv">
+    <div id="character1Container">
+        <h2>Character 1</h2>
+        <div id="leftCharactersGoHere"></div>
+    </div>    
+    <div id="character2Container">
+        <h2>Character 2</h2>
+        <div id="rightCharactersGoHere"></div>
+    </div>
+    <div style="clear:both;"></div>
+</div> <!--#charactersDiv-->
+
+<div id="saveDiv">
+
+    <br><br>
+    <h3>OK, my comic is perfect and now I want to save it as an image</h3>
+    <div style="clear:both;height:5px;"></div>
+    <label>Image format:</label>
+    <input type="radio" id="imageFormatPNG" name="imageFormat" checked="checked">
+    <label for="imageFormatPNG">PNG</label>
+    <input type="radio" id="imageFormatSVG" name="imageFormat">
+    <label for="imageFormatSVG">SVG</label>
+    <div style="clear:both;height:5px;"></div>
+    <button id="saveImage">Generate image</button>
+    <div style="clear:both;height:5px;"></div>
+    <div id="description"></div>
+
+    <div id="imageGenerationFoo">
+        <div id="imageContainer">
+            <div id="imageGoesHere"></div>
+            <div style="clear:both;"></div>
+        </div> <!-- #imageContainer -->
+    </div> <!-- #imageGenerationFoo -->
+
+</div> <!-- #saveDiv -->
+
+<div id="faq">
+
+<h2>Frequently asked questions</h2>
+
+<h3>Is this for kids?</h3>
+
+<p>It's for people of any age.</p>
+
+<h3>I'm a teacher, can I use this in my class?</h3>
+
+<p>Sure!</p>
+
+<h3>What's the best way to learn how to use Foofurple Comics?</h3>
+
+<p>Just try clicking the buttons and typing in the text boxes to see what happens - we promise you won't break it.</p>
+
+<h3>Should I save my comic image as PNG or SVG? What's the difference?</h3>
+
+<p>PNG images are widely accepted, so if you want to post your comic on a blog or social networking site or something like that, PNG is your best bet.</p>
+
+<p>On the other hand SVG images look better; if you magnify a PNG image it will get blurry, but an SVG image looks just as sharp no matter how big or small you make it.</p>
+
+<h3>When I click the faces button nothing happens!</h3>
+
+<p>The faces only work for the human characters. They don't work for the animals and the white blob characters, whose enigmatically blank expressions - much like the Mona Lisa's - reveal little of their complex and fascinating inner lives.</p>
+
+<h3>What should I do with the image description?</h3>
+
+<p>If you post your comic on the Internet somewhere, post the image description along with it. That way people with poor vision, and people who have really tiny screens on their mobile phones, will be able to appreciate it.</p>
+
+<h3>What do the letters and numbers in the color box mean?</h3>
+
+<p>That's what we call a hex code, a sequence of six numbers or letters that represents a color. For example 000000 is black, FFFFFF is white, FFFF00 is bright yellow and 00FFFF is bright cyan (greenish blue). It's called hex, or hexadecimal, because unlike regular numbers where there are 10 digits - 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9 - with hex numbers there are 16 digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E and F.</p>
+
+<h3>About the artwork</h3>
+
+<p>All the images used in Foofurple COMIC are in the <a href="http://creativecommons.org/publicdomain/mark/1.0/">public domain</a>; the artists have waived their copyrights so that others can re-use the artworks without restriction.</p>
+
+<p>The <a href="http://openclipart.org/detail/17824/cartoon-goat-by-lemmling">goat</a> and <a href="http://openclipart.org/detail/17637/cartoon-sheep-by-lemmling">sheep</a> were both created by lemmling.</p>
+
+<p>The <a href="https://openclipart.org/detail/28420/cartoon-pterodactyl-by-studiofibonacci">pterodactyl</a> was created by Studio Fibonacci.</p>
+
+<p>The <a href="http://openclipart.org/detail/193243/">polar bear</a> is a remix by anarres of <a href="https://openclipart.org/detail/169961/cartoon-polar-bear-by-studiofibonacci">another polar bear</a> by StudioFibonacci, and similarly the <a href="https://openclipart.org/detail/193095/tyrannosaurus-by-anarres-193095">tyrannosaurus rex</a> is a remix by anarres of <a href="https://openclipart.org/detail/23513/cartoon-tyrannosaurus-rex-by-studiofibonacci">a slightly different tyrannosaurus rex</a> by StudioFibonacci.</p>
+
+<p>The human-type characters and the blob characters were created by anarres.</p>
+
+<p>All these images can be found at the <a href="http://openclipart.org/">Open Clipart Library</a>, a massive online repository of public domain images.</p>
+
+
+</div> <!-- #faq -->
+
+<footer>
+    <p><a href="http://foofurple.com/">foofurple.com</a></p>
+</footer>
+
+<div id="hiddenSVG" style="display:none;height:200px;"></div>
+
+</div> <!--#innerContainer-->
+</div> <!--#container-->
+
+</body>
+</html>

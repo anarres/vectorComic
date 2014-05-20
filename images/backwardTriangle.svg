@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     height="54"
+     id="svg1"
+     inkscape:version="0.48.3.1 r9886"
+     sodipodi:docname="backwardTriangle.svg"
+     sodipodi:version="0.32"
+     version="1.0"
+     width="32.96875"
+     x="0"
+     y="0">
+    <metadata
+         id="metadata3809">
+        <rdf:RDF>
+            <cc:Work
+                 rdf:about="">
+                <dc:title />
+                <dc:description />
+                <dc:subject>
+                    <rdf:Bag>
+                        <rdf:li>hash</rdf:li>
+                        <rdf:li />
+                        <rdf:li>action</rdf:li>
+                        <rdf:li>computer</rdf:li>
+                        <rdf:li>icons</rdf:li>
+                        <rdf:li>theme</rdf:li>
+                    </rdf:Bag>
+                </dc:subject>
+                <dc:publisher>
+                    <cc:Agent
+                         rdf:about="http://www.openclipart.org">
+                        <dc:title>Danny Allen</dc:title>
+                    </cc:Agent>
+                </dc:publisher>
+                <dc:creator>
+                    <cc:Agent>
+                        <dc:title>Danny Allen</dc:title>
+                    </cc:Agent>
+                </dc:creator>
+                <dc:rights>
+                    <cc:Agent>
+                        <dc:title>Danny Allen</dc:title>
+                    </cc:Agent>
+                </dc:rights>
+                <dc:date />
+                <dc:format>image/svg+xml</dc:format>
+                <dc:type
+                     rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                <cc:license
+                     rdf:resource="http://web.resource.org/cc/PublicDomain" />
+                <dc:language>en</dc:language>
+            </cc:Work>
+            <cc:License
+                 rdf:about="http://web.resource.org/cc/PublicDomain">
+                <cc:permits
+                     rdf:resource="http://web.resource.org/cc/Reproduction" />
+                <cc:permits
+                     rdf:resource="http://web.resource.org/cc/Distribution" />
+                <cc:permits
+                     rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+            </cc:License>
+        </rdf:RDF>
+    </metadata>
+    <sodipodi:namedview
+         bordercolor="#666666"
+         borderopacity="1.0"
+         id="base"
+         inkscape:cx="-46.652508"
+         inkscape:cy="32.060014"
+         inkscape:pageopacity="0.0"
+         inkscape:pageshadow="2"
+         inkscape:window-height="1124"
+         inkscape:window-width="1920"
+         inkscape:window-x="0"
+         inkscape:window-y="24"
+         inkscape:zoom="6"
+         pagecolor="#ffffff"
+         showgrid="false"
+         inkscape:window-maximized="1"
+         inkscape:current-layer="svg1"
+         fit-margin-top="0"
+         fit-margin-left="0"
+         fit-margin-right="0"
+         fit-margin-bottom="0" />
+    <defs
+         id="defs3">
+        <linearGradient
+             id="linearGradient900">
+            <stop
+                 id="stop901"
+                 offset="0"
+                 style="stop-color:#000;stop-opacity:1;" />
+            <stop
+                 id="stop902"
+                 offset="1"
+                 style="stop-color:#fff;stop-opacity:1;" />
+        </linearGradient>
+        <linearGradient
+             id="linearGradient903"
+             xlink:href="#linearGradient900" />
+        <linearGradient
+             id="linearGradient904"
+             xlink:href="#linearGradient900" />
+        <linearGradient
+             id="linearGradient905"
+             xlink:href="#linearGradient900" />
+        <linearGradient
+             id="linearGradient906"
+             xlink:href="#linearGradient900" />
+        <linearGradient
+             id="linearGradient907"
+             xlink:href="#linearGradient900" />
+    </defs>
+    <path
+         sodipodi:type="star"
+         style="fill:none;stroke:#484848;stroke-width:2.21422648;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="path3848"
+         sodipodi:sides="3"
+         sodipodi:cx="-106.2"
+         sodipodi:cy="0.80000001"
+         sodipodi:r1="26.566896"
+         sodipodi:r2="13.283448"
+         sodipodi:arg1="1.0936815"
+         sodipodi:arg2="2.1408791"
+         inkscape:flatsided="true"
+         inkscape:rounded="0.03"
+         inkscape:randomized="0"
+         d="M -93.999997,24.4 C -95.226289,25.03393 -132.80234,0.94447573 -132.7382,-0.43448956 -132.67405,-1.8134548 -93.023944,-22.310545 -91.861798,-21.56551 -90.699652,-20.820475 -92.773705,23.766069 -93.999997,24.4 z"
+         inkscape:transform-center-x="-5.302103"
+         inkscape:transform-center-y="0.073220942"
+         transform="matrix(0.80723261,-0.04004267,0.03203228,1.0090992,109.73774,21.432968)" />
+    <path
+         style="fill:#eeeecc;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 32.96875,0 0,3.6875 C 27.99874,6.2602859 2.4938356,25.003008 2.487063,26.28125 2.4801982,27.578748 28.58707,47.436078 32.96875,49.625 l 0,4.375 L 0,54 0,0 32.96875,0 z"
+         id="rect2990-4"
+         inkscape:connector-curvature="0" />
+</svg>

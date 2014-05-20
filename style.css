@@ -247,18 +247,23 @@ div#dialog2 {
 button#bubble1 {    
     background-image: url('images/bubbleIconRight.svg');
     background-size: contain;
+    background-repeat: none;
     width:25px;
     height: 25px;
 }
 button#bubble2 {    
     background-image: url('images/bubbleIconLeft.svg');
     background-size: contain;
-    width:25px;
+    background-repeat: none;
+    width: 25px;
     height: 25px;
 }
- #showFaces1 img, #showFaces2 img {
-    width: 44px;
-    height: 22px;
+button#showFaces1, button#showFaces2 {
+    width: 50px;
+    height: 25px;
+    background-image: url('images/qubodupEmoticons.svg');
+    background-size: contain;
+    background-repeat: none;
 }
 #dialog1 textarea, #dialog2 textarea {
     width: 92%;

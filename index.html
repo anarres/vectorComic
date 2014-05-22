@@ -4,9 +4,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <title>Foofurple comics!</title>
-<meta name="description" content="Make your own web comic! Tell a story with word bubbles and free, public domain cartoon characters.">
-<link rel="icon" type="image/png" href="favicon.ico">
+<meta name="description" content="Make your own web comic! Select characters and create your own dialog, then save your comic as an image to share with others. Express your creativity... with comics!">
 
+<link rel="icon" type="image/png" href="favicon.ico">
 <link type="text/css" media="screen" rel="stylesheet" href="style.css">
 
 <script type="text/javascript" src="jscolor/jscolor.js"></script>
@@ -22,28 +22,34 @@
 <div id="top"></div>
 
 <header>
-    <h1>
-        <a href="http://foofurple.com/">
-            <img src="foofurpleLogo.svg" alt="Foofurple" style="float:left;margin:0px 5px;width:90px;height:auto;">
-        </a>
-        <img src="COMIC.svg" alt="COMIC: for all your public domain web comic needs" style="float:left;width:200px;margin:0px 5px;height:auto;">
-        <div style="color:#fff;float:right;width:140px;text-align:center;font-size:0.8em;line-height:1em;vertical-align:middle;padding: 5px 0px;font-family:Impact, Charcoal, sans-serif">
+    <hgroup>
+        <h1>
+            <a href="http://foofurple.com/">
+                <img src="foofurpleLogo.svg" alt="Foofurple" id="foofurpleLogo">
+            </a>
+            <img src="COMIC.svg" alt="COMIC" id="comicLogo">
+        </h1>
+        <div id="tagline">
             For all your public domain web comic needs.
         </div>
-    </h1>
+    </hgroup>
     <div style="clear:both;"></div>
 </header>
+
+<menu>
+    <ul>
+        <li><a href="#charactersDiv">Characters</a></li>
+        <li><a href="#saveDiv">Save</a></li>
+        <li><a href="#faq">FAQ</a></li>
+    </ul>
+</menu>
 
 <div id="colorButton">
     <p>Background color:</p>
     <input type="text" class="color" value="AAE3E3" id="jscolor" size="6" >
 </div>
 
-<ul id="menu">
-    <li><a href="#charactersDiv">Characters</a></li>
-    <li><a href="#saveDiv">Save</a></li>
-    <li><a href="#faq">FAQ</a></li>
-</ul>
+<div style="clear:both;"></div>
 
 <div id="linkToTopDiv">
     <a href="#top"  id="linkToTop">
@@ -172,7 +178,7 @@
 
 <h3>About the artwork</h3>
 
-<p>All the images used in Foofurple COMIC are in the <a href="http://creativecommons.org/publicdomain/mark/1.0/">public domain</a>; the artists have waived their copyrights so that others can re-use the artworks without restriction.</p>
+<p>All the images used in Foofurple COMIC are in the <a href="http://creativecommons.org/publicdomain/mark/1.0/">public domain</a>; the artists have waived their copyrights so that others can share and re-use their artworks without restriction.</p>
 
 <p>The <a href="http://openclipart.org/detail/17824/cartoon-goat-by-lemmling">goat</a> and <a href="http://openclipart.org/detail/17637/cartoon-sheep-by-lemmling">sheep</a> were both created by lemmling.</p>
 
@@ -187,6 +193,10 @@
 <h3>What happened to the old Foofurple Comic?</h3>
 
 <p>It's archived at FIXME.</p>
+
+<h3>I would like to host a copy of Foofurple COMIC on my own server and maybe make some modifications to it, is that OK?</h3>
+
+<p>Yes, go right ahead. There is a git repository at FIXME if you like that sort of thing.</p>
 
 </div> <!-- #faq -->
 

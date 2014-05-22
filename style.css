@@ -93,10 +93,18 @@ html {
 
 /* SPECIFIC */
 
+header {
+    background-color: #574332;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 2px 0px;
+}
+/*
 #header img {
     width: 100%;
     height: auto;
 }
+*/
 #top {
     height: 2px;
     clear: both;
@@ -395,15 +403,15 @@ footer {
     clear:both;
     margin-top: 40px;
     margin-bottom: 10px;
-    padding: 20px;
+    padding: 20px 10px;
     color: #fff;
     background-color: #574332;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 footer p {
     text-align: center;
 }
-footer a {
+footer a, footer img {
     color: #eee;
 }
 footer a:hover {

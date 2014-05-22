@@ -81,7 +81,6 @@ svg {
 html {
     width: 100%;
     background-color: #fff;
-    background-repeat: repeat;
 }
 #container {
     max-width: 600px;
@@ -171,9 +170,9 @@ a#linkToTop:hover {
 /* Panel interface thingie */
 
 #panelInterface {
-    border: 1px solid #574332;
+    border: 2px solid #574332;
     padding: 3px 0px;
-    border-radius: 9px;
+    border-radius: 8px;
     padding-bottom:0;
     background-color: #eec;    
 }
@@ -259,7 +258,7 @@ button#bubble2 {
 button#showFaces1, button#showFaces2 {
     width: 50px;
     height: 25px;
-    background-image: url('images/qubodupEmoticons.svg');
+    background-image: url('data:image/svg+xml;utf8,<svg%20xmlns="http://www.w3.org/2000/svg"%20width="50"%20height="25"%20version="1.0"><g%20stroke-linejoin="round"%20stroke="%23404040"%20stroke-linecap="round"%20transform="matrix(1.316%200%200%201.316%202.197%201.02)"><path%20id="path3612-5"%20d="m15.4%208.6a7%207%200%200%201%20-14%200%207%207%200%201%201%2014%200z"%20stroke-width="1.2"%20fill="%23ff8"/><path%20id="path3620-1"%20d="m4.4%205.4c0%202%203%202%203%200"%20fill="none"/><path%20id="path3622-7"%20d="m9.4%205.4c0%202%203%202%203%200"%20fill="none"/><path%20id="path3156-0"%20d="m4.467%208.867c0%203%202%204%204%204s4-1%204-4"%20fill="none"/>%20%20<path%20id="path3279-1"%20d="m32.925%208.6a7%207%200%200%201%20-14%200%207%207%200%201%201%2014%200z"%20stroke-width="1.2"%20fill="%23ff8"/>%20%20<path%20id="path3281-7"%20d="m21.925%2011.6c0-2%202-3%204-3s4%201%204%203"%20fill="none"/><g%20id="g3014"%20transform="matrix(-1%200%200%201%2050.675%201.1)"%20fill="%23404040"><path%20id="path3322-3"%20d="m23.856%204.857a1.112%201.112%200%201%201%20-2.223%200%201.112%201.112%200%201%201%202.223%200z"%20stroke-width=".741"/><path%20id="path3326-1"%20d="m27.429%204.833a0.667%200.667%200%200%201%20-1.333%200%200.667%200.667%200%201%201%201.333%200z"%20stroke-width=".667"/></g></g></svg>');
     background-size: contain;
     background-repeat: none;
 }
@@ -298,8 +297,8 @@ img#zoomPlus:hover, img#zoomMinus:hover {
 /* CHARACTERS SELECTION */
 
 div#charactersDiv {
-    border-radius: 9px;
-    border: 1px solid #574332;
+    border-radius: 8px;
+    border: 2px solid #574332;
     background-color: #eec;
     padding: 2px 0px;
 }
@@ -374,7 +373,7 @@ div#description {
 
 div#faq {
     clear: both;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 div#faq h2 {
     font-size: 1.6em;

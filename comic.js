@@ -69,7 +69,7 @@ model: {
     scaleFactor: 0.7,
     backgroundColor: "#AAE3E3",
     character1Index: 7,
-    character2Index: 9,
+    character2Index: 12,
     panels: [ 
          {
             bubble1: "word",
@@ -77,15 +77,15 @@ model: {
             leftFaceIndex: 1,
             rightFaceIndex: 0,
             text1:"Hi! You can use this website to create your own comic!",
-            text2: "We're on Panel 1 right now. Click the forward triangle to go to Panel 2."
+            text2: "Use the controls to create more panels and write your own dialog. Have fun!"
         },
         {
             bubble1: "word",
             bubble2: "word",
             leftFaceIndex: 0,
             rightFaceIndex: 0,
-            text1:"Here we are on Panel 2! To create a new panel, click the green +. You can also add your own dialog to the white text box.",
-            text2: "Try clicking on the other buttons to see what else you can do. Have fun!"
+            text1:"Here we are on another panel!", 
+            text2: "Yes indeed, here we are."
         }
     ],
     credits: function() {
@@ -302,7 +302,7 @@ controllers: {
                 var panelNum = parseInt(document.getElementById("panelNum").value);
                 var panelIndex = panelNum - 1;
                 var spliceBeforeIndex = panelIndex + 1;
-                var newPanel = { bubble1: "word", bubble2: "word", text1:"", text2: "Hi!", leftFaceIndex: 0, rightFaceIndex: 0 };
+                var newPanel = { bubble1: "word", bubble2: "word", text1:"Hey look, it's a new panel! Better delete this text and write something else.", text2: "", leftFaceIndex: 0, rightFaceIndex: 0 };
 
                 // Update the model
                 COMIC.model.panels.splice( spliceBeforeIndex, 0, newPanel );

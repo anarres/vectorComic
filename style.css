@@ -11,15 +11,9 @@
 
 /* TYPOGRAPHY and general styles */
 
-h1,h2,h3,h4,h5,h6 { 
+h2,h3,h4,h5,h6 {
     font-weight: normal;
     text-align: left;
-}
-h1 {
-    margin: 0;
-    padding: 0;
-}
-h2,h3,h4,h5,h6 {
     font-size: 1.1em;
     line-height:1em;
     padding: 0px;
@@ -96,7 +90,18 @@ header {
     background-color: #574332;
     border-radius: 5px;
     padding: 5px;
+    padding-bottom: 0;
     margin: 2px 0px;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+    color: #bce7ef;
+    font-family: Verdana, sans-serif;
+    font-size: 3.4em;
+    font-weight: bold;
+    line-height: 0.9em;
+    display: inline;
 }
 img#foofurpleLogo {
     float: left;
@@ -104,19 +109,13 @@ img#foofurpleLogo {
     width: 92px;
     height: auto;
 }
-img#comicLogo {
-    float: left;
-    width: 200px;
-    height: auto;
-    margin: 0px 3px;
-}
 div#tagline {
     width:140px;
     float: right;
-    padding: 4px 0px;
+    padding-top: 4px;
     font-family: Impact, Charcoal, sans-serif;
     font-size: 0.8em;
-    line-height: 1em;
+    line-height: 1.2em;
     color: #fff;
     text-align: center;
 }

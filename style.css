@@ -15,7 +15,7 @@ h2,h3,h4,h5,h6 {
     font-weight: normal;
     text-align: left;
     font-size: 1.1em;
-    line-height:1em;
+    line-height: 1em;
     padding: 0px;
     margin: 0px;
 }
@@ -101,7 +101,6 @@ h1 {
     font-size: 2.8em;
     font-weight: bold;
     line-height: 1em;
-    letter-spacing: 0.2em;
     display: inline;
 }
 img#foofurpleLogo {
@@ -369,9 +368,10 @@ img.character1NotSelected:hover, img.character2NotSelected:hover {
 /* SAVE IMAGE */
 
 #saveDiv h2 {
-    font-size: 1.6em;
+    font-size: 1.4em;
     padding: 7px 0px;
 }
+
 button#saveImage {
     margin: 6px 2px;
     padding: 5px 0px;

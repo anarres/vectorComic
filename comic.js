@@ -1075,6 +1075,19 @@ svg: {
 
 saveImage: function() {
 
+    // FIXME
+    COMIC.model.scaleFactor = 1.5;
+
+
+
+
+
+
+
+
+
+
+
     var width = COMIC.constants.svgWidth();
     var height = COMIC.constants.svgHeight();
     var rawSVG = COMIC.svg.getSVG();
@@ -1129,6 +1142,9 @@ saveImage: function() {
         myImage.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
         document.getElementById("imageGoesHere").appendChild(myImage);
     }
+
+    // FIXME
+    COMIC.model.scaleFactor = 0.7;
 
 },      // End of COMIC.saveImage
 

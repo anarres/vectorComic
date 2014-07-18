@@ -22,10 +22,10 @@
 <div id="top"></div>
 
 <header>
+        <a href="http://foofurple.com/">
+            <img src="foofurpleLogo.svg" alt="Foofurple" id="foofurpleLogo">
+        </a>
         <h1>
-            <a href="http://foofurple.com/">
-                <img src="foofurpleLogo.svg" alt="Foofurple" id="foofurpleLogo">
-            </a>
             COMIC
         </h1>
         <div id="tagline">
@@ -62,13 +62,13 @@
 
     <div id="panelEditor">
         <div id="panelNumDiv">
-            Panel: <img id="decreasePanelNum" title="Previous panel" class="notGreyedOut" src='triangleBack.svg'>
 
-<input type="text" value="1" size="1" id="panelNum">
 
-<img id="increasePanelNum" title="Next panel" class="notGreyedOut" src='triangleForward.svg'>
+            <label>Panel:</label>
+            <button id="decreasePanelNum" title="Previous panel" class="notGreyedOut"></button><div id="foo123"><input type="text" value="1" size="1" id="panelNum"></div><button id="increasePanelNum" title="Next panel" class="notGreyedOut"></button>
 
         </div> <!-- #paneNumDiv-->
+
         <button id="deletePanel" title="Delete panel" class="notGreyedOut"></button>
         <button id="newPanel" title="New panel"></button>
         <div style="clear:both;"></div>

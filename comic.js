@@ -134,7 +134,6 @@ model: {
                 out += "'";
             }
         }
-
         //  FIXME put me somewhere else
         out += "<br><br><em>Once the image appears, right-click and 'Save Image As' to save.</em>";
 
@@ -327,6 +326,17 @@ controllers: {
             if (panelIndex > 0) {
                 newPanelIndex = panelIndex - 1;
             }
+
+            // If there is only one remaining panel, the deletePanel button
+            // should be greyed out to show that you can't delete any more panels
+
+
+
+
+
+
+
+
             // Update the text panel interface
             var newPanelNum = newPanelIndex + 1;
             document.getElementById("panelNum").value = newPanelNum;
@@ -334,20 +344,8 @@ controllers: {
             COMIC.controllers.refreshPreview();
             }, false);
 
-        /*
-        document.getElementById("zoomMinus").addEventListener("click", function() {
-            if (COMIC.model.scaleFactor >= 0.4) {
-                COMIC.model.scaleFactor -= 0.1;
-                COMIC.controllers.refreshPreview();
-            }
-        }, false);
-        document.getElementById("zoomPlus").addEventListener("click", function() {
-            if (COMIC.model.scaleFactor <= 2.0) {
-                COMIC.model.scaleFactor += 0.1;
-                COMIC.controllers.refreshPreview();
-            }
-        }, false);
-        */
+
+
 
         document.getElementById("saveImage").addEventListener("click", function() {
 

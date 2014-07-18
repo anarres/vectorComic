@@ -88,19 +88,20 @@ html {
 
 header {
     background-color: #574332;
-    border-radius: 5px;
-    padding: 5px;
-    padding-bottom: 0;
-    margin: 2px 0px;
+    border-radius: 2px;
+    border-top: 5px solid #574332;
+    padding-top: 2px;
+    margin-bottom: 2px;
 }
 h1 {
     margin: 0;
     padding: 0;
-    color: #bce7ef;
+    color: #AFF;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 2.8em;
-    font-weight: bold;
-    line-height: 1em;
+    font-size: 3.2em;
+    font-weight: normal;
+    line-height: 0.9em;
+    letter-spacing: 0.04em;
     display: inline;
 }
 img#foofurpleLogo {
@@ -112,12 +113,11 @@ img#foofurpleLogo {
 div#tagline {
     width:140px;
     float: right;
-    padding: 2px 0px;
-    font-family: Impact, Charcoal, sans-serif;
+    padding: 0px;
     font-size: 0.8em;
-    line-height: 1.2em;
     color: #fff;
     text-align: center;
+    font-weight: bold;
 }
 
 
@@ -217,6 +217,7 @@ img#decreasePanelNum, img#increasePanelNum {
 }
 img.notGreyedOut, button.notGreyedOut {
     background-color: #eec;
+    background-color: #ee6;
 }
 img.notGreyedOut:hover, button.notGreyedOut:hover {
     background-color: #FFE747;
@@ -227,8 +228,8 @@ img.greyedOut, button.greyedOut {
 input#panelNum {
     text-align: center;
     font-size: 1em;
-    padding: 0px;
-    margin: 0px 0px 0px 0px;
+    //padding: 0px;
+    //margin: 0px 0px 0px 0px;
 }
 button#deletePanel, button#newPanel {
     padding: 0px;

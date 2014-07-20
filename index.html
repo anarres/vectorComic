@@ -26,10 +26,10 @@
             <img src="foofurpleLogo.svg" alt="Foofurple" id="foofurpleLogo">
         </a>
         <h1>
-            COMIC
+            <img src="comic.svg" alt="COMIC">
         </h1>
         <div id="tagline">
-            For all your public domain web comic needs.
+            ...for all your public domain web comic needs
         </div>
     <div style="clear:both;"></div>
 </header>
@@ -58,36 +58,54 @@
 
 <div style="clear:both;height:5px;"></div>
 
-<div id="panelInterface">
+<div class="interfaceWrapper">
+<div class="interface">
 
     <div id="panelEditor">
         <div id="panelNumDiv">
-
-
             <label>Panel:</label>
-            <button id="decreasePanelNum" title="Previous panel" class="notGreyedOut"></button><div id="foo123"><input type="text" value="1" size="1" id="panelNum"></div><button id="increasePanelNum" title="Next panel" class="notGreyedOut"></button>
-
+            <button id="decreasePanelNum" title="Previous panel" class="notGreyedOut"></button><div id="inputContainerDiv"><input type="text" value="1" size="1" id="panelNum"></div><button id="increasePanelNum" title="Next panel" class="notGreyedOut"></button>
         </div> <!-- #paneNumDiv-->
 
-        <button id="deletePanel" title="Delete panel" class="notGreyedOut"></button>
-        <button id="newPanel" title="New panel"></button>
+        <button id="deletePanel" class="notGreyedOut">Delete panel</button>
+        <button id="newPanel">New panel</button>
         <div style="clear:both;"></div>
     </div> <!-- #panelEditor  -->
 
-    <div id="dialog1" >
-        <textarea id="character1Text"></textarea>
-            <button id="bubble1" title="Bubbles"></button>
-            <button id="showFaces1" title="Faces">
-            </button>
-            <div style="clear:both;"></div>
-    </div> <!-- #dialog1 -->
 
-    <div id="dialog2">
-        <textarea id="character2Text"></textarea>
-            <button id="bubble2" title="Bubbles"></button>
-            <button id="showFaces2" title="Faces"></button>
-            <div style="clear:both;"></div>
-    </div> <!-- #dialog2 -->
+        <div class="halfBox">
+            <div class="innerBox">
+
+                <div class="strip">
+                    <label>Character 1</label>
+                    <button id="bubble1" title="Bubbles"></button>
+                    <button id="showFaces1" title="Faces"></button>
+                </div>
+
+                <div class="textareaWrapper">
+                    <textarea id="character1Text"></textarea>
+                </div>
+
+            </div> <!--.innerBox-->
+        </div> <!--.halfBox-->
+
+
+        <div class="halfBox">
+            <div class="innerBox innerBoxRight">
+
+                <div class="strip">
+                    <label>Character 2</label>
+                    <button id="bubble2" title="Bubbles"></button>
+                    <button id="showFaces2" title="Faces"></button>
+                </div>
+
+                <div class="textareaWrapper">
+                    <textarea id="character2Text"></textarea>
+                </div>
+
+            </div> <!--.innerBox-->
+        </div> <!--.halfBox-->
+
 
     <div id="previewDiv">
         <div id="previewBox">
@@ -97,14 +115,13 @@
         <div style="clear:both;"></div>
     </div> <!-- #previewDiv -->
 
-    <!--
-    <img id="zoomPlus" src="images/publicDomainIcon-zoomIn.svg">
-    <img id="zoomMinus" src="images/publicDomainIcon-zoomOut.svg">
-    -->
-
     <div style="clear:both;"></div>
 
-</div> <!-- #panelInterface -->
+</div> <!--.interface-->
+</div> <!--.interfaceWrapper-->
+
+
+
 
 <div style="height:30px; clear:both;"></div>
 
@@ -206,13 +223,13 @@
 
 </div> <!-- #faq -->
 
-<footer>
+<div id="footer">
     <p>
         <a href="http://foofurple.com/">
             <img src="foofurpleLogo.svg" alt="Foofurple">
         </a>
     </p>
-</footer>
+</div> <!--#footer-->
 
 <div id="hiddenSVG" style="display:none;height:200px;"></div>
 

@@ -201,6 +201,10 @@ a#linkToTop:hover {
     padding: 1px 4px;
     font-size: 1.2em;
 }
+#panelNumDiv span {
+    padding: inherit;
+    font-size: inherit;
+}
 div#inputContainerDiv {
     height: 25px;
     border-radius: 2px;
@@ -215,15 +219,17 @@ input#panelNum {
 .halfBox {
     width: 50%;
     float: left;
-    background-color: #baba99;
+    background-color: #bb9;
 }
 .innerBox {
     border-radius: 2px;
     margin: 1px;
+    margin-top: 0;
     margin-left: 0;
 }
 .innerBoxRight {
     margin: 1px 0px;
+    margin-top: 0;
 }
 .strip {
     background-color: #ddb;
@@ -390,7 +396,6 @@ button#saveImage {
     margin: 6px 2px;
     padding: 5px 0px;
     font-size: 1.2em;
-    border-radius: 5px;
     width: 100%;
     text-align: center;
 }

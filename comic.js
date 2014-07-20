@@ -203,6 +203,7 @@ controllers: {
         var panelIndex = panelNum - 1;
         document.getElementById("character1Text").value = COMIC.model.panels[panelIndex].text1;
         document.getElementById("character2Text").value = COMIC.model.panels[panelIndex].text2;
+        document.getElementById("totalPanelCount").innerHTML = COMIC.model.panels.length;
     },
 
     addListeners: function() {

@@ -190,12 +190,15 @@ a#linkToTop:hover {
 
 .interfaceWrapper {
     border-radius: 2px;
-    background-color: #cbcbaa;
-background-color: #888;
+    background-color: #888;
     padding: 1px;
 }
 .interface {
     background-color: #ededcc;
+}
+.interface button {
+    border-top: none;
+    border-bottom: none;
 }
 #panelNumDiv label {
     display: block;
@@ -233,30 +236,31 @@ input#panelNum {
 .innerBoxRight {
     margin: 1px 0px;
     margin-top: 0;
-
     border-top: 1px solid #bb9;
 }
 .strip {
     background-color: #ededcc;
     min-height: 25px;
+    border-bottom: 1px solid #bb9;
 }
 .innerBox label {
     font-size: 1em;
     font-weight: normal;
-
     font-size: 0.9em;
     padding: 1px 4px;
     font-style: italic;
+    display: block;
+    float: left;
 }
 .textareaWrapper {
-    padding: 2px;
+    padding: 1px 4px;
     background-color: #fff;
     clear: both;
 }
 textarea {
     font-size: .9em;
     width: 100%;
-    height: 70px;
+    height: 50px;
 }
 
 

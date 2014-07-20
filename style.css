@@ -184,17 +184,14 @@ a#linkToTop:hover {
 }
 
 
-
-
 /* Panel interface */
 
 .interfaceWrapper {
-    border-radius: 2px;
-    background-color: #888;
-    padding: 1px;
 }
 .interface {
+    border-radius: 2px;
     background-color: #ededcc;
+    border: 1px solid #998;
 }
 .interface button {
     border-top: none;
@@ -227,16 +224,11 @@ input#panelNum {
     background-color: #bb9;
 }
 .innerBox {
-    border-radius: 2px;
-    margin: 1px;
-    margin-left: 0;
-    margin-top: 0;
     border-top: 1px solid #bb9;
+    border-bottom: 1px solid #bb9;
 }
 .innerBoxRight {
-    margin: 1px 0px;
-    margin-top: 0;
-    border-top: 1px solid #bb9;
+    margin-left: 1px;
 }
 .strip {
     background-color: #ededcc;
@@ -302,8 +294,6 @@ button#deletePanel, button#newPanel {
     height: 27px;
     background-repeat: no-repeat;
 }
-
-
 button#deletePanel {
     background-image: url('ekss.svg');
 }

@@ -192,7 +192,6 @@ controllers: {
         }
 
         var panelIndex = panelNum - 1;
-
         var svg = COMIC.svg.panelPreview(panelIndex);
         document.getElementById("svgGoesHere").innerHTML = svg;
     },
@@ -315,35 +314,37 @@ controllers: {
             }
         }, false);
 
+
+
+
+
         document.getElementById("deletePanel").addEventListener("click", function() {
-            var panelNum = parseInt(document.getElementById("panelNum").value);
-            var panelIndex = panelNum - 1;
 
-            // Update the model
-            COMIC.model.panels.splice(panelIndex, 1);
+            // Check there are at least 2 panels, otherwise do nothing
+            if (COMIC.model.panels.length > 1) {
 
-            // Get the new panelIndex
-            var newPanelIndex = 0;
-            if (panelIndex > 0) {
-                newPanelIndex = panelIndex - 1;
+                var panelNum = parseInt(document.getElementById("panelNum").value);
+                var panelIndex = panelNum - 1;
+
+                // Update the model
+                COMIC.model.panels.splice(panelIndex, 1);
+
+                // Get the new panelIndex
+                var newPanelIndex = 0;
+                if (panelIndex > 0) {
+                    newPanelIndex = panelIndex - 1;
+                }
+
+                // Update the text panel interface
+                var newPanelNum = newPanelIndex + 1;
+                document.getElementById("panelNum").value = newPanelNum;
+                COMIC.controllers.refreshTextDisplay();
+                COMIC.controllers.refreshPreview();
             }
-
-            // If there is only one remaining panel, the deletePanel button
-            // should be greyed out to show that you can't delete any more panels
-
-
-
-
-
-
-
-
-            // Update the text panel interface
-            var newPanelNum = newPanelIndex + 1;
-            document.getElementById("panelNum").value = newPanelNum;
-            COMIC.controllers.refreshTextDisplay();
-            COMIC.controllers.refreshPreview();
             }, false);
+
+
+
 
 
 

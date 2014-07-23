@@ -253,6 +253,8 @@ textarea {
     font-size: .9em;
     width: 100%;
     height: 50px;
+    resize: both;
+    overflow: auto;
 }
 
 
@@ -340,32 +342,27 @@ button#showFaces1, button#showFaces2 {
     display: block;
 }
 
-
-
-
-
 /* CHARACTERS SELECTION */
 
-div#charactersDiv {
-    border-radius: 2px;
-    border: 1px solid #aa9;
-    background-color: #eec;
-    padding: 2px 0px;
-}
 div#character1Container {
     width: 48%;
     float:left;
 }
 div#character2Container {
     width: 48%; 
-    float:right;
+    float: right;
     padding-left: 2px;
-    border-left: 1px dashed #574332;
+    border-left: 1px solid #bb9;
 }
-#charactersDiv h2 {
+.interface h2 {
     text-align: center;
-    padding: 4px;
+    padding: 2px 4px;
+    font-size: 1.2em;
 }
+
+
+
+
 img.character1NotSelected, img.character2NotSelected, img.character1Selected, img.character2Selected {
     width: 40px;
     height: 40px;

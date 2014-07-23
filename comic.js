@@ -1075,7 +1075,7 @@ svg: {
 saveImage: function() {
 
     // FIXME
-    COMIC.model.scaleFactor = 1.5;
+    COMIC.model.scaleFactor = 1.2;
 
 
 

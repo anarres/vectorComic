@@ -257,19 +257,6 @@ textarea {
     overflow: auto;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 button.greyedOut:hover {
     background-color:  #ddd;
 }
@@ -292,7 +279,6 @@ button#deletePanel, button#newPanel {
     padding-left: 25px;
     padding-right: 2px;
     font-size: 1em;
-    //width: 25px;
     height: 27px;
     background-repeat: no-repeat;
 }

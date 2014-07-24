@@ -958,7 +958,7 @@ svg: {
 
     creditsSVG: function() {
         var svg ="";
-        var creditsY = COMIC.constants.creditsY();
+        var creditsY = COMIC.svg.creditsY();
         var credits = COMIC.model.credits();
         var creditsLinesArray = COMIC.utils.textFoo(credits, COMIC.constants.creditsMaxLineLength, 5);
         var numLines = creditsLinesArray.length;
@@ -979,7 +979,6 @@ svg: {
 
 
     top: function(scaleFactor, isPreview) {
-        console.log('scaleFactor: ' + scaleFactor);
         var svg = "";
         var svgWidth = COMIC.svg.svgWidth(scaleFactor);
         var svgHeight = COMIC.svg.svgHeight(scaleFactor, isPreview);
@@ -1040,8 +1039,6 @@ svg: {
         // End of the reusable panel element definition
         svg += "</g></defs>";
 
-//        console.log(svg);
-
         return svg;
     },
 
@@ -1068,12 +1065,6 @@ svg: {
 },      // End of COMIC.svg 
 
 
-
-
-
-
-
-
 /*
  *  COMIC.saveImage
  *  Turns the comic into a .PNG or a .SVG image that the user can download
@@ -1081,22 +1072,9 @@ svg: {
 
 saveImage: function() {
 
-    // FIXME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
-    //COMIC.model.scaleFactor = 1.2;
-
-
-
-
-
-
-
-
-
-
-
-    var width = COMIC.constants.svgWidth();
-    var height = COMIC.constants.svgHeight();
-    var rawSVG = COMIC.svg.getSVG(COMIC.model.scaleFactor);
+    var width = COMIC.svg.svgWidth(scaleFactor=COMIC.model.scaleFactor);
+    var height = COMIC.svg.svgHeight(scaleFactor=COMIC.model.scaleFactor);
+    var rawSVG = COMIC.svg.getSVG(scaleFactor=COMIC.model.scaleFactor);
 
     // Set the height of the div that will hold the image
     var divHeight = height + 20;
@@ -1148,9 +1126,6 @@ saveImage: function() {
         document.getElementById("imageGoesHere").appendChild(myImage);
     }
 
-    // FIXME
-    //COMIC.model.scaleFactor = 0.7;
-
 },      // End of COMIC.saveImage
 
 /*
@@ -1161,12 +1136,7 @@ init: function() {
     document.getElementById("panelNum").value = "1";
 
     COMIC.model.previewScaleFactor = COMIC.constants.defaultPreviewScaleFactor;
-    COMIC.model.ScaleFactor = COMIC.constants.defaultScaleFactor;
-
-
-
-
-
+    COMIC.model.scaleFactor = COMIC.constants.defaultScaleFactor;
     COMIC.controllers.addListeners();
     COMIC.model.backgroundColor = "#" + document.getElementById("jscolor").value;
     COMIC.controllers.refreshPreview();

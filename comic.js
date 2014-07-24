@@ -891,26 +891,86 @@ svg: {
 
         return svg;
     },
+
+
+
     panelSVG: function(i, singlePanel) {
+        console.log(i);
+
         var svg = "";
+
         var text1Array = COMIC.utils.textFoo( COMIC.model.panels[i].text1, COMIC.constants.maxLineLength, COMIC.constants.maxNumLines );
+
         var numLines1 = text1Array.length;
 
         var text2Array = COMIC.utils.textFoo( COMIC.model.panels[i].text2, COMIC.constants.maxLineLength, COMIC.constants.maxNumLines );
+
         var numLines2 = text2Array.length;
+
+
+
         var panelY = COMIC.svg.panelY(i);
+
         if (singlePanel == true) {
             panelY = COMIC.svg.panelY(0);
         }
+
         var text1Y0 = panelY + COMIC.constants.textY;
         var text2Y0 = panelY + COMIC.constants.textY;
 
-        // The part that's the same for each panel that was defined above
-        svg += "<use xlink:href='#panel' x='";
+/*
+        svg += "<g id='panel' x='>";
         svg += COMIC.constants.comicHorizontalSpace;
         svg += "' y='";
         svg += panelY;
-        svg += "' />";
+        svg += "'>";
+       svg += "</g>";
+*/
+
+
+        // <g> around the parts of the panel that don't change
+        svg += "<g id='panel' transform='translate(";
+        svg += COMIC.constants.comicHorizontalSpace;
+        svg += ", ";
+        svg += panelY;
+        svg += ")'>";
+
+            // Background rectangle
+            svg += "<rect rx='4' ry='4' x='-2' y='-2' stroke='#888' stroke-width='0' width='";
+            svg += COMIC.constants.panelWidth;
+            svg += "' height='";
+            svg += COMIC.constants.panelHeight;
+            svg += "' fill='";
+            svg += COMIC.model.backgroundColor;
+            svg += "' />";
+
+            // Character 1
+            svg += "<g transform='translate(";
+            svg += COMIC.constants.character1X;
+            svg += ", ";
+            svg += COMIC.constants.characterY;
+            svg += ")'>";
+            svg += COMIC_CHARACTERS[COMIC.model.character1Index].svg;
+            svg += "</g>";
+
+            // Character 2
+            svg += "<g transform='translate(";
+            svg += COMIC.constants.character2X;
+            svg += ", ";
+            svg += COMIC.constants.characterY;
+            svg += ")'>";
+            svg += COMIC_CHARACTERS[COMIC.model.character2Index].svg;
+            svg += "</g>";
+
+
+
+
+        svg += "</g>";
+
+
+
+
+
 
         // Faces - left
         if ( COMIC_CHARACTERS[COMIC.model.character1Index].hasFaces ) {
@@ -949,6 +1009,7 @@ svg: {
             svg += text2Array[j];
             svg += "</text>";
         }
+
         return svg;
     },
 
@@ -972,6 +1033,7 @@ svg: {
         }
         return svg;
     },
+
 
 
     top: function(scaleFactor, isPreview) {
@@ -1003,37 +1065,6 @@ svg: {
         svg += " } #credits {";
         svg += COMIC.constants.creditsTextStyle;
         svg += "}   ]]>  </style>";
-
-        // Define a reusable panel element
-        svg += "<defs><g id='panel'>";
-        svg += "<rect rx='4' ry='4' x='-2' y='-2' stroke='#888' stroke-width='0' width='";
-        svg += COMIC.constants.panelWidth;
-        svg += "' height='";
-        svg += COMIC.constants.panelHeight;
-        svg += "' fill='";
-        svg += COMIC.model.backgroundColor;
-        svg += "' />";
-
-        // Character 1
-        svg += "<g transform='translate(";
-        svg += COMIC.constants.character1X;
-        svg += ", ";
-        svg += COMIC.constants.characterY;
-        svg += ")'>";
-        svg += COMIC_CHARACTERS[COMIC.model.character1Index].svg;
-        svg += "</g>";
-
-        // Character 2
-        svg += "<g transform='translate(";
-        svg += COMIC.constants.character2X;
-        svg += ", ";
-        svg += COMIC.constants.characterY;
-        svg += ")'>";
-        svg += COMIC_CHARACTERS[COMIC.model.character2Index].svg;
-        svg += "</g>";
-
-        // End of the reusable panel element definition
-        svg += "</g></defs>";
 
         return svg;
     },

@@ -116,9 +116,7 @@ model: {
                 out += "'";
             }
         }
-        //  FIXME put me somewhere else
         out += "<br><br><em>Once the image appears, right-click and 'Save Image As' to save.</em>";
-
         return out;
     }
 },      // End of COMIC.model
@@ -158,7 +156,6 @@ controllers: {
             document.getElementById("increasePanelNum").setAttribute("class", "notGreyedOut");
         }
 
-
         if (panelNum == 1) {
             document.getElementById("decreasePanelNum").setAttribute("class", "greyedOut");
         }
@@ -177,7 +174,6 @@ controllers: {
         var svg = COMIC.svg.panelPreview(panelIndex);
         document.getElementById("svgGoesHere").innerHTML = svg;
     },
-
 
     refreshTextDisplay: function() {
         var panelNum = parseInt( document.getElementById("panelNum").value );

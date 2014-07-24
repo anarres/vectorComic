@@ -1,12 +1,14 @@
 var COMIC = {
 
 /*  
- *   COMIC.constants
+ *   COMIC.constants:
  *   Values to be set by the website administrator
  */
 
 constants: {
 
+    defaultPreviewScaleFactor: 0.7,
+    defaultScaleFactor: 1.2,
     maxPanels: 8,
     panelWidth: 400,
     panelHeight: 270,
@@ -37,26 +39,6 @@ constants: {
     bubbleStyle: "fill='#fff' stroke='#888' stroke-width='1' stroke-linejoin='round' stroke-linecap='round'",
     stemHeight: 66,
 
-    svgWidth: function() {
-        return COMIC.model.scaleFactor * (COMIC.constants.panelWidth + 2 * COMIC.constants.comicHorizontalSpace);
-    },
-    svgHeight: function(preview) {
-        var numPanels = COMIC.model.panels.length;
-        if (preview) {
-            numPanels = 1;
-        }
-        return COMIC.model.scaleFactor * (2 * COMIC.constants.comicVerticalSpace + numPanels * COMIC.constants.panelHeight + (numPanels - 1) * COMIC.constants.spaceBetweenPanels + COMIC.constants.metadataHeight);
-    },
-
-    panelY: function(panelIndex) {
-        var y = COMIC.constants.comicVerticalSpace;
-        y += panelIndex * (COMIC.constants.panelHeight + COMIC.constants.spaceBetweenPanels);
-        return y;
-    },
-    creditsY: function() {
-        var numPanels = COMIC.model.panels.length;
-        return 2 * COMIC.constants.comicVerticalSpace + numPanels * COMIC.constants.panelHeight + (numPanels - 1) * COMIC.constants.spaceBetweenPanels + COMIC.constants.lineHeight; 
-    }
 },      // End of COMIC.constants
 
 
@@ -66,7 +48,7 @@ constants: {
  */
 
 model: {
-    scaleFactor: 0.7,
+
     backgroundColor: "#AAE3E3",
     character1Index: 7,
     character2Index: 12,
@@ -314,10 +296,6 @@ controllers: {
             }
         }, false);
 
-
-
-
-
         document.getElementById("deletePanel").addEventListener("click", function() {
 
             // Check there are at least 2 panels, otherwise do nothing
@@ -342,12 +320,6 @@ controllers: {
                 COMIC.controllers.refreshPreview();
             }
             }, false);
-
-
-
-
-
-
 
         document.getElementById("saveImage").addEventListener("click", function() {
 
@@ -524,6 +496,30 @@ imageSelectors: {
 */
 
 svg: {
+
+    svgWidth: function(scaleFactor) {
+        return scaleFactor * (COMIC.constants.panelWidth + 2 * COMIC.constants.comicHorizontalSpace);
+    },
+
+    // FIXME 
+    svgHeight: function(scaleFactor, isPreview) {
+        var numPanels = COMIC.model.panels.length;
+        if (isPreview) {
+            numPanels = 1;
+        }
+        return scaleFactor * (2 * COMIC.constants.comicVerticalSpace + numPanels * COMIC.constants.panelHeight + (numPanels - 1) * COMIC.constants.spaceBetweenPanels + COMIC.constants.metadataHeight);
+    },
+
+    panelY: function(panelIndex) {
+        var y = COMIC.constants.comicVerticalSpace;
+        y += panelIndex * (COMIC.constants.panelHeight + COMIC.constants.spaceBetweenPanels);
+        return y;
+    },
+
+    creditsY: function() {
+        var numPanels = COMIC.model.panels.length;
+        return 2 * COMIC.constants.comicVerticalSpace + numPanels * COMIC.constants.panelHeight + (numPanels - 1) * COMIC.constants.spaceBetweenPanels + COMIC.constants.lineHeight; 
+    },
 
     leftFace: function(panelY, panelIndex) {
         var y = panelY + COMIC.constants.faceY;     
@@ -906,9 +902,9 @@ svg: {
 
         var text2Array = COMIC.utils.textFoo( COMIC.model.panels[i].text2, COMIC.constants.maxLineLength, COMIC.constants.maxNumLines );
         var numLines2 = text2Array.length;
-        var panelY = COMIC.constants.panelY(i);
+        var panelY = COMIC.svg.panelY(i);
         if (singlePanel == true) {
-            panelY = COMIC.constants.panelY(0);
+            panelY = COMIC.svg.panelY(0);
         }
         var text1Y0 = panelY + COMIC.constants.textY;
         var text2Y0 = panelY + COMIC.constants.textY;
@@ -982,10 +978,11 @@ svg: {
     },
 
 
-    top: function(preview) {
+    top: function(scaleFactor, isPreview) {
+        console.log('scaleFactor: ' + scaleFactor);
         var svg = "";
-        var svgWidth = COMIC.constants.svgWidth();
-        var svgHeight = COMIC.constants.svgHeight(preview);
+        var svgWidth = COMIC.svg.svgWidth(scaleFactor);
+        var svgHeight = COMIC.svg.svgHeight(scaleFactor, isPreview);
 
         var svg = "<svg xmlns='http://www.w3.org/2000/svg'  xmlns:xlink='http://www.w3.org/1999/xlink'  width='";
         svg += svgWidth;
@@ -1002,7 +999,7 @@ svg: {
         svg += "' />";
 
         svg += "<g transform='scale(";
-        svg += COMIC.model.scaleFactor;
+        svg += scaleFactor;                         // FIXME !!!!!!!!!!!!!!!!!
         svg += ")'>";
 
         // CSS style
@@ -1043,19 +1040,22 @@ svg: {
         // End of the reusable panel element definition
         svg += "</g></defs>";
 
+//        console.log(svg);
+
         return svg;
     },
-    panelPreview: function(i) {
-        var svgWidth = COMIC.constants.svgWidth();
-        var svgHeight = COMIC.constants.svgHeight(true);
-        var svg = COMIC.svg.top(true);
-        svg += COMIC.svg.panelSVG(i, true);
+
+    panelPreview: function(panelIndex) {
+        var svgWidth = COMIC.svg.svgWidth(scaleFactor=COMIC.model.previewScaleFactor);
+        var svgHeight = COMIC.svg.svgHeight(scaleFactor=COMIC.model.previewScaleFactor, isPreview=true);
+        var svg = COMIC.svg.top(scaleFactor=COMIC.model.previewScaleFactor, isPreview=true);
+        svg += COMIC.svg.panelSVG(panelIndex, true);
         svg += "</g></svg>";
         return svg;
     },
 
-    getSVG: function() {
-        var svg = COMIC.svg.top();
+    getSVG: function(scaleFactor) {
+        var svg = COMIC.svg.top(scaleFactor);
 
         // Loop over the panels
         for (var i=0; i<COMIC.model.panels.length; i++) {
@@ -1068,6 +1068,12 @@ svg: {
 },      // End of COMIC.svg 
 
 
+
+
+
+
+
+
 /*
  *  COMIC.saveImage
  *  Turns the comic into a .PNG or a .SVG image that the user can download
@@ -1075,8 +1081,8 @@ svg: {
 
 saveImage: function() {
 
-    // FIXME
-    COMIC.model.scaleFactor = 1.2;
+    // FIXME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
+    //COMIC.model.scaleFactor = 1.2;
 
 
 
@@ -1090,7 +1096,7 @@ saveImage: function() {
 
     var width = COMIC.constants.svgWidth();
     var height = COMIC.constants.svgHeight();
-    var rawSVG = COMIC.svg.getSVG();
+    var rawSVG = COMIC.svg.getSVG(COMIC.model.scaleFactor);
 
     // Set the height of the div that will hold the image
     var divHeight = height + 20;
@@ -1104,7 +1110,6 @@ saveImage: function() {
 
     // The hidden svg element
     var svg = hiddenDiv.childNodes[0];
-
     document.getElementById("description").innerHTML = COMIC.model.description();
 
   
@@ -1136,7 +1141,7 @@ saveImage: function() {
 
     // Save SVG image
     else {
-        var svg = COMIC.svg.getSVG();
+        var svg = COMIC.svg.getSVG(COMIC.model.scaleFactor);
         var myImage = new Image();
         myImage.setAttribute("id", "myImage");
         myImage.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
@@ -1144,7 +1149,7 @@ saveImage: function() {
     }
 
     // FIXME
-    COMIC.model.scaleFactor = 0.7;
+    //COMIC.model.scaleFactor = 0.7;
 
 },      // End of COMIC.saveImage
 
@@ -1154,6 +1159,13 @@ saveImage: function() {
 */
 init: function() {
     document.getElementById("panelNum").value = "1";
+
+    COMIC.model.previewScaleFactor = COMIC.constants.defaultPreviewScaleFactor;
+    COMIC.model.ScaleFactor = COMIC.constants.defaultScaleFactor;
+
+
+
+
 
     COMIC.controllers.addListeners();
     COMIC.model.backgroundColor = "#" + document.getElementById("jscolor").value;

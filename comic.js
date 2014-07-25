@@ -892,41 +892,22 @@ svg: {
         return svg;
     },
 
-
-
     panelSVG: function(i, singlePanel) {
-        console.log(i);
-
-        var svg = "";
 
         var text1Array = COMIC.utils.textFoo( COMIC.model.panels[i].text1, COMIC.constants.maxLineLength, COMIC.constants.maxNumLines );
 
-        var numLines1 = text1Array.length;
-
         var text2Array = COMIC.utils.textFoo( COMIC.model.panels[i].text2, COMIC.constants.maxLineLength, COMIC.constants.maxNumLines );
 
+        var numLines1 = text1Array.length;
         var numLines2 = text2Array.length;
-
-
-
         var panelY = COMIC.svg.panelY(i);
 
         if (singlePanel == true) {
             panelY = COMIC.svg.panelY(0);
         }
-
         var text1Y0 = panelY + COMIC.constants.textY;
         var text2Y0 = panelY + COMIC.constants.textY;
-
-/*
-        svg += "<g id='panel' x='>";
-        svg += COMIC.constants.comicHorizontalSpace;
-        svg += "' y='";
-        svg += panelY;
-        svg += "'>";
-       svg += "</g>";
-*/
-
+        var svg = "";
 
         // <g> around the parts of the panel that don't change
         svg += "<g id='panel' transform='translate(";
@@ -962,26 +943,16 @@ svg: {
             svg += COMIC_CHARACTERS[COMIC.model.character2Index].svg;
             svg += "</g>";
 
-
-
-
         svg += "</g>";
-
-
-
-
-
 
         // Faces - left
         if ( COMIC_CHARACTERS[COMIC.model.character1Index].hasFaces ) {
             svg += COMIC.svg.leftFace(panelY, i);
         }
-
         // Faces - right
         if ( COMIC_CHARACTERS[COMIC.model.character2Index].hasFaces ) {
             svg += COMIC.svg.rightFace(panelY, i);
         }
-
         // Text bubbles
         svg += COMIC.svg.wordBubble(COMIC.constants.comicHorizontalSpace, panelY, "left", numLines1, COMIC.model.panels[i].bubble1);
         svg += COMIC.svg.wordBubble(COMIC.constants.comicHorizontalSpace, panelY, "right", numLines2, COMIC.model.panels[i].bubble2);
@@ -997,7 +968,6 @@ svg: {
             svg += text1Array[j];
             svg += "</text>";
         }
-
         // Loop over the substrings
         for (var j=0; j<numLines2; j++) {
             var textY = text2Y0 + j * COMIC.constants.lineHeight;
@@ -1009,7 +979,6 @@ svg: {
             svg += text2Array[j];
             svg += "</text>";
         }
-
         return svg;
     },
 

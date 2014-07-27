@@ -23,8 +23,8 @@ constants: {
     character1X: 45,
     character2X: 235,
     characterY: 146,
-    face1X: 52,
-    face2X: 242,
+    face1X: 55,
+    face2X: 245,
     faceY: 143,
 
     // Text
@@ -493,6 +493,20 @@ imageSelectors: {
 
 svg: {
 
+    characterBase: "<g id='character-base' stroke='#222' transform='translate(2.49 -.74)'>  <rect id='legs' stroke-linejoin='round' transform='matrix(1 0 0 1 0 0)' fill-rule='evenodd' rx='21.11' ry='8.59' height='54.95' width='63.84' stroke-linecap='round' y='63.35' x='25.74' stroke-width='1.4' fill='#fff'/>  <path id='path3928-9-81-8-0-5-1-1-3-4-5-7-0-8' stroke-linejoin='round' d='m59.07 117.14-0.3-11.6' stroke-linecap='round' stroke-width='1.4' fill='#fff'/>  <path id='path3954-8-5-7-3-4-8-9-1-79-8-5-5-00-6-8-7-9-51-1-0' stroke-linejoin='round' d='m14.14 97.97a6.65 4.98 12.91 0 0 11.04 -4.38 6.65 4.98 12.91 1 0 -11.04 4.38z' fill-rule='evenodd' stroke-linecap='round' stroke-width='1.4' fill='#ab926c'/>  <rect id='right-arm' stroke-linejoin='round' transform='matrix(-.9 -.43 -.45 .9 0 0)' fill-rule='evenodd' rx='6.82' ry='19.67' height='44.15' width='27.91' stroke-linecap='round' y='33.01' x='-74.85' stroke-width='1.4' fill='#fff'/>  <path stroke-linejoin='round' d='m99 98.92a4.98 6.65 77.09 1 1 -11.04 -4.38 4.98 6.65 77.09 0 1 11.04 4.38z' fill-rule='evenodd' stroke-linecap='round' stroke-width='1.4' fill='#ab926c'/>  <rect id='left-arm' stroke-linejoin='round' transform='matrix(.9 -.43 .44 .9 0 0)' fill-rule='evenodd' rx='6.76' ry='19.64' height='44.06' width='27.68' stroke-linecap='round' y='82.37' x='29.01' stroke-width='1.4' fill='#fff'/>  <path id='shirt-front' stroke-linejoin='round' d='m57.8 42.36c-0.11 0-0.23 0.01-0.34 0.01h-0.49v0.02c-7.54 0.37-14.52 4.43-19.19 9.56-10.03 10.92-13.85 25.3-14.19 39.1 0.26 3.54-0.51 7.79 1.15 10.86 6.03 3.32 16.67 3.88 23.93 4.66 1.92 0.08 4.98 0.1 8.3 0.11v0.01c0.35 0 0.68 0 1.02-0.01 0.03 0 0.07 0 0.1 0 3.32-0.02 6.38-0.04 8.3-0.11 7.25-0.78 17.89-1.33 23.93-4.66 1.66-3.07 0.89-7.32 1.15-10.86-0.34-13.8-4.16-28.18-14.19-39.1-4.68-5.13-11.66-9.19-19.19-9.56v-0.03h-0.3z' fill-rule='evenodd' stroke-linecap='round' stroke-width='1.4' fill='#fff'/>  <rect id='head' stroke-linejoin='bevel' fill-rule='evenodd' rx='34.8' ry='29.53' height='61.1' width='72.72' stroke-linecap='round' y='4.29' x='21.07' stroke-width='1.4' fill='#ab926c'/>  <path id='right-shoe' d='m41.61 109.59c-7.09 0-12.79 3.44-12.79 7.71v2.19c1.27 0.35 2.65 0.55 4.1 0.55h16.67c1.81 0 3.53-0.3 5.05-0.84v-1.9c0-4.27-5.7-7.71-12.79-7.71h-0.24z' fill-rule='evenodd' stroke-width='1.4' fill='#fff'/>  <path id='left-shoe' d='m75.53 109.59c-7.09 0-12.79 3.44-12.79 7.71v2.19c1.27 0.35 2.65 0.55 4.1 0.55h16.67c1.81 0 3.53-0.3 5.05-0.84v-1.9c0-4.27-5.7-7.71-12.79-7.71h-0.24z' fill-rule='evenodd' stroke-width='1.4' fill='#fff'/> </g>",
+
+
+    characterSVG: function(characterIndex) {
+        if (COMIC_CHARACTERS[characterIndex].hasFaces) {
+            return COMIC.svg.characterBase + COMIC_CHARACTERS[characterIndex].svg;
+        }
+        else {
+            return COMIC_CHARACTERS[characterIndex].svg;
+        }
+    },
+
+
+
     svgWidth: function(scaleFactor) {
         return scaleFactor * (COMIC.constants.panelWidth + 2 * COMIC.constants.comicHorizontalSpace);
     },
@@ -926,21 +940,21 @@ svg: {
             svg += "' />";
 
             // Character 1
-            svg += "<g transform='translate(";
+            svg += "<g id='character1' transform='translate(";
             svg += COMIC.constants.character1X;
             svg += ", ";
             svg += COMIC.constants.characterY;
             svg += ")'>";
-            svg += COMIC_CHARACTERS[COMIC.model.character1Index].svg;
+            svg += COMIC.svg.characterSVG(COMIC.model.character1Index);
             svg += "</g>";
 
             // Character 2
-            svg += "<g transform='translate(";
+            svg += "<g id='character2' transform='translate(";
             svg += COMIC.constants.character2X;
             svg += ", ";
             svg += COMIC.constants.characterY;
             svg += ")'>";
-            svg += COMIC_CHARACTERS[COMIC.model.character2Index].svg;
+            svg += COMIC.svg.characterSVG(COMIC.model.character2Index);
             svg += "</g>";
 
         svg += "</g>";
@@ -1003,8 +1017,6 @@ svg: {
         return svg;
     },
 
-
-
     top: function(scaleFactor, isPreview) {
         var svg = "";
         var svgWidth = COMIC.svg.svgWidth(scaleFactor);
@@ -1025,15 +1037,70 @@ svg: {
         svg += "' />";
 
         svg += "<g transform='scale(";
-        svg += scaleFactor;                         // FIXME !!!!!!!!!!!!!!!!!
+        svg += scaleFactor;
         svg += ")'>";
 
-        // CSS style
-        svg += "<style type='text/css' > <![CDATA[ text { ";
+        // CSS styles...
+        svg += "<style type='text/css' > <![CDATA[ "; 
+
+        // General defaults
+        svg += "rect, path { stroke: #222; stroke-width: 1.4; }";
+
+        // Text styles
+        svg += "text { ";
         svg += COMIC.constants.textStyle;
         svg += " } #credits {";
         svg += COMIC.constants.creditsTextStyle;
-        svg += "}   ]]>  </style>";
+        svg += "} ";
+
+        // Character-specific styles
+        if (COMIC_CHARACTERS[COMIC.model.character1Index].hasFaces) {
+
+            svg += "#character1 #face, #character1#left-hand, #character1#right-hand { fill: ";
+            svg += COMIC_CHARACTERS[COMIC.model.character1Index].trouserColor;
+            svg += "; }";
+
+            svg += "#character1 #shirt-front { fill: ";
+            svg += COMIC_CHARACTERS[COMIC.model.character1Index].shirtColor;
+            svg += "; }";
+
+            svg += "#character1 #left-arm, #character1 #right-arm { fill: ";
+            svg += COMIC_CHARACTERS[COMIC.model.character1Index].sleevesColor;
+            svg += "; }";
+
+            svg += "#character1 rect#legs { fill: ";
+            svg += COMIC_CHARACTERS[COMIC.model.character1Index].trouserColor;
+            svg += "; }";
+
+            svg += "#character1 #left-shoe, #right-shoe { fill: ";
+            svg += COMIC_CHARACTERS[COMIC.model.character1Index].shoeColor;
+            svg += "; }";
+        }
+
+        if (COMIC_CHARACTERS[COMIC.model.character2Index].hasFaces) {
+
+            svg += "#character2 #face, #character2#left-hand, #character2#right-hand { fill: ";
+            svg += COMIC_CHARACTERS[COMIC.model.character2Index].trouserColor;
+            svg += "; }";
+
+            svg += "#character2 #shirt-front { fill: ";
+            svg += COMIC_CHARACTERS[COMIC.model.character2Index].shirtColor;
+            svg += "; }";
+
+            svg += "#character2 #left-arm, #character2 #right-arm { fill: ";
+            svg += COMIC_CHARACTERS[COMIC.model.character2Index].sleevesColor;
+            svg += "; }";
+
+            svg += "#character2 rect#legs { fill: ";
+            svg += COMIC_CHARACTERS[COMIC.model.character2Index].trouserColor;
+            svg += "; }";
+
+            svg += "#character2 #left-shoe, #right-shoe { fill: ";
+            svg += COMIC_CHARACTERS[COMIC.model.character2Index].shoeColor;
+            svg += "; }";
+        }
+
+        svg += " ]]>  </style>";
 
         return svg;
     },

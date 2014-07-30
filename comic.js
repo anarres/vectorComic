@@ -1078,8 +1078,8 @@ svg: {
         // CSS styles...
         svg += "<style type='text/css' > <![CDATA[ "; 
 
-        // General defaults
-        svg += "rect, path { stroke: #222; stroke-width: 1.4; }";
+
+        svg += "#head, #shirt, #left-arm, #right-arm, #legs, #shoes  { stroke: #222; stroke-width: 1.4; }";
 
         // Text styles
         svg += "text { ";

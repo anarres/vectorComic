@@ -419,29 +419,43 @@ imageSelectors: {
         COMIC.controllers.refreshPreview();
     },
 
+
+
+
+
     // Thumbs are loaded after page load so they don't slow it down. Asynchronous!
-    loadLeftThumbs: function() {
-        var parentID = "leftCharactersGoHere";
+    loadThumbs: function() {
         var num = COMIC_CHARACTERS.length;
-        var div = document.createElement('div');
-        var parent = document.getElementById(parentID);
+        var leftParent = document.getElementById("leftCharactersGoHere");
+        var rightParent = document.getElementById("rightCharactersGoHere");
+        var leftDiv = document.createElement('div');
+        var rightDiv = document.createElement('div');
 
         for (var i=0; i<num; i++) {
-            var img = new Image();
-            img.id = "leftCharacter" + i;
-            img.setAttribute('class','character1NotSelected');
+            var leftImage = new Image();
+            var rightImage = new Image();
+
+            leftImage.id = "leftCharacter" + i;
+            rightImage.id = "rightCharacter" + i;
+
+            leftImage.setAttribute('class','character1NotSelected');
+            rightImage.setAttribute('class','character2NotSelected');
+
             var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90">';
             svg += COMIC.svg.characterSVG(i);
+
 
             if (COMIC_CHARACTERS[i].hasFaces) {
                 svg += "<circle cx='42' cy='41' fill='#222' stroke='none' r='3' />";
                 svg += "<circle cx='72' cy='41' fill='#222' stroke='none' r='3' />";
-                svg += "<path fill='none' stroke='#888' stroke-width='3' d='M 50 52 L 64 52' />";
+                svg += "<path fill='none' stroke='#222' stroke-width='1.4' d='M 50 52 L 64 52' />";
 
                 // CSS styles...
                 svg += "<style type='text/css' > <![CDATA[ "; 
 
-                svg += "head, #left-hand, #right-hand { fill: ";
+                svg += "#head, #shirt-front, #left-hand, #right-hand, #legs, #trouser-line, #left-shoe, #right-shoe, #left-arm, #right-arm  { stroke: #222; stroke-width: 1.4; }";
+
+                svg += "#head, #left-hand, #right-hand { fill: ";
                 svg += COMIC_CHARACTERS[i].skinColor;
                 svg += "; }";
 
@@ -462,61 +476,31 @@ imageSelectors: {
                 svg += "; }";
 
                 svg += " ]]>  </style>";
-
-
-
-
-
-
-
-
-
             }
 
             svg += '</svg>';
             var src =  'data:image/svg+xml;utf8, ';
             src += encodeURIComponent(svg);
-            img.src = src;
-            img.onload = function() {
+            leftImage.src = src;
+            rightImage.src = src;
+
+            leftImage.onload = function() {
                 this.addEventListener('click', function() {
                     COMIC.imageSelectors.selectCharacter1(this.id);
                 }, false);
             }
-            div.appendChild(img);
-        }
-        parent.appendChild(div);
-    },
+            leftDiv.appendChild(leftImage);
+            leftParent.appendChild(leftDiv);
 
-    loadRightThumbs: function() {
-        var parentID = "rightCharactersGoHere";
-        var num = COMIC_CHARACTERS.length;
-        var div = document.createElement('div');
-        var parent = document.getElementById(parentID);
-
-        for (var i=0; i<num; i++) {
-            var img = new Image();
-            img.id = "rightCharacter" + i;
-            img.setAttribute('class','character2NotSelected');
-            var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90">';
-            svg += COMIC_CHARACTERS[i].svg;
-
-            if (COMIC_CHARACTERS[i].hasFaces) {
-                svg += "<circle cx='42' cy='41' fill='#222' stroke='none' r='3' />";
-                svg += "<circle cx='72' cy='41' fill='#222' stroke='none' r='3' />";
-                svg += "<path fill='none' stroke='#888' stroke-width='2' d='M 52 52 L 62 52' />";
-            }
-            svg += '</svg>';
-            var src =  'data:image/svg+xml;utf8, ';
-            src += encodeURIComponent(svg);
-            img.src = src;
-            img.onload = function() {
+            rightImage.onload = function() {
                 this.addEventListener('click', function() {
                     COMIC.imageSelectors.selectCharacter2(this.id);
                 }, false);
             }
-            div.appendChild(img);
-        }
-        parent.appendChild(div);
+            rightDiv.appendChild(rightImage);
+            rightParent.appendChild(rightDiv);
+}
+
     }
 },      // END of COMIC.imageSelectors
 
@@ -1238,8 +1222,9 @@ init: function() {
     COMIC.model.backgroundColor = "#" + document.getElementById("jscolor").value;
     COMIC.controllers.refreshPreview();
     COMIC.controllers.refreshTextDisplay();
-    COMIC.imageSelectors.loadLeftThumbs();
-    COMIC.imageSelectors.loadRightThumbs();
+    COMIC.imageSelectors.loadThumbs();
+    //COMIC.imageSelectors.loadLeftThumbs();
+    //COMIC.imageSelectors.loadRightThumbs();
 
     // Select the characters
     var leftID = "leftCharacter" + COMIC.model.character1Index;

@@ -605,6 +605,11 @@ svg: {
         return svg;
     },
 
+
+
+
+
+
     wordBubble: function(panelX, panelY, leftOrRight, numLines, style) {
         if (style == "none") {
             return "";
@@ -953,8 +958,23 @@ svg: {
             }
         }       // End of thought bubbles
 
+        console.log(svg);
         return svg;
     },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     panelSVG: function(i, singlePanel) {
 
@@ -1195,8 +1215,6 @@ init: function() {
     COMIC.controllers.refreshPreview();
     COMIC.controllers.refreshTextDisplay();
     COMIC.imageSelectors.loadThumbs();
-    //COMIC.imageSelectors.loadLeftThumbs();
-    //COMIC.imageSelectors.loadRightThumbs();
 
     // Select the characters
     var leftID = "leftCharacter" + COMIC.model.character1Index;

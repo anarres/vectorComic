@@ -209,5 +209,30 @@ var COMIC_FACES = [
         svg: '<path id="mouth" stroke-linejoin="round" d="m57 48 h6" stroke="#222" stroke-linecap="round" stroke-width="2" fill="none"/>  <path id="left-eyebrow" stroke-linejoin="round" d="m69.476 36.857 11.381-2.712" stroke="#222" stroke-linecap="round" stroke-width="1.5" fill="none"/>  <path id="right-eyebrow" stroke-linejoin="round" d="m49.857 36.191-11.381-2.712" stroke="#222" stroke-linecap="round" stroke-width="1.5" fill="none"/><circle id="right-eye" cx="45" cy="37.5" r="3" fill="#222" stroke="none" /> <circle id="left-eye" cx="74" cy="37.5" r="3" fill="#222" stroke="none" /> '
     },
 
-
 ];
+
+var LEFT_WORD_BUBBLE = function(numLines) {
+
+    if (numLines == 0) { return ""; }
+
+    else if (numLines == 1) {
+        return "<rect id='bubble' x='19' y='15' width='186' height='40' /><path id='bubbleStem' d='M 29 53 L 51 81 L 46 53' />";
+     }
+
+    else if (numLines == 2) {
+        
+
+
+     }
+
+};
+/*
+
+var RIGHT_WORD_BUBBLES = [];
+
+var LEFT_THOUGHT_BUBBLES = [];
+
+var RIGHT_THOUGHT_BUBBLES = [];
+
+*/
+

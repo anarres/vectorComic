@@ -35,17 +35,12 @@ button {
     border-radius: 6px;
     cursor: pointer;
     text-align: center;
-    border: 1px solid  #ddd;     //#666;         //#cca;
-    border: 1px solid  #999;    //#aaa;        //#888;     //#4D5751;
-    //border-right: 1px solid #bb0;
-    //border-bottom: 1px solid #bb0;
+    border: 1px solid  #888; 
 }
 button:hover {
     background-color: #ff6;
     background-color: #ee7;
     border: 1px solid #aa4;
-    //border-right: 1px solid #882;
-    //border-bottom: 1px solid #882;
 }
 input {
     border-radius: 3px;
@@ -188,15 +183,15 @@ a#linkToTop:hover {
 
 .interface {
     border-radius: 2px;
-    background-color: #ededcc;
-background-color: #cca;
     background-color:  #ddb;
     border: 1px solid #ddb;
+    padding: 2px 0px;
 }
 #panelNumDiv label {
     display: block;
     float: left;
     padding: 1px 4px;
+    margin: 0px  4px;
     font-size: 1.2em;
 }
 #panelNumDiv span {
@@ -245,7 +240,7 @@ button#newPanel {
     background-image: url('plus.svg');
 }
 #bubble1, #bubble2, #showFaces1, #showFaces2 {
-    float: right;
+    float: left;
 }
 button#bubble1 {    
     background-image: url('data:image/svg+xml;utf8,<svg%20xmlns="http://www.w3.org/2000/svg"%20height="28"%20width="28"%20version="1.1"%20><path%20stroke-linejoin="round"%20d="m13.761%203.308c-5.184%200.086-9.756%203.065-10.726%207.291-1.109%204.83%202.903%209.468%208.957%2010.353l0.061-0.003%200.033%200.028-0.137%200.005%208.598%204.168-3.485-4.393c4.186-0.953%207.122-3.531%207.907-6.949%201.109-4.83-2.905-9.468-8.959-10.353-0.757-0.111-1.509-0.158-2.249-0.145zm3.279%2017.45h0.013v0.023l-0.013-0.023z"%20fill-rule="evenodd"%20fill-opacity=".694"%20stroke="%23404040"%20stroke-linecap="round"%20stroke-width="1.7"%20fill="%23c9edd8"/></svg>');
@@ -276,23 +271,21 @@ button#showFaces1, button#showFaces2 {
     float: left;
 }
 .innerBox {
-    border-top: 1px solid #eed;     //#bb9;
-    border-bottom: 1px solid #eed;      //#bb9;
+    border-top: 2px solid #eed;
+    border-bottom: 2px solid #eed;
 }
 .innerBoxRight {
-    margin-left: 1px;
+    border-left: 2px solid #eed;
 }
 .strip {
-    //background-color: #ededcc;
     min-height: 25px;
     border-bottom: 1px solid #bb9;
 }
 .innerBox label {
     font-size: 1em;
     font-weight: normal;
-    font-size: 0.8em;
     padding: 1px 4px;
-    font-style: italic;
+    margin: 0px  4px;
     display: block;
     float: left;
 }
@@ -308,8 +301,6 @@ textarea {
     resize: both;
     overflow: auto;
 }
-
-
 
 
 /* Preview */
@@ -368,6 +359,9 @@ img.character1NotSelected:hover, img.character2NotSelected:hover {
 #saveDiv h2 {
     font-size: 1.4em;
     padding: 7px 0px;
+}
+input#imageFormatPNG, input#imageFormatSVG {
+    margin-left: 8px;
 }
 
 button#saveImage {

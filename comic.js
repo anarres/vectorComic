@@ -3,6 +3,7 @@ var COMIC = {
 /*  
  *   COMIC.constants:
  *   Values to be set by the website administrator
+ *   Wants to be a separate JSON file?
  */
 
 constants: {
@@ -36,8 +37,19 @@ constants: {
     lineHeight: 17,
     textStyle: "font-family: 'Arial Black', sans-serif ; font-size: 14px; text-anchor:middle; ",
     creditsTextStyle: "font-family: 'Arial Black', sans-serif ; font-size: 12px; text-anchor:middle; ",
-    bubbleStyle: "fill='#fff' stroke='#888' stroke-width='1' stroke-linejoin='round' stroke-linecap='round'",
-    stemHeight: 66,
+
+    // Word bubbles & thought bubbles
+    bubbleY: 5,
+    bubble1X: 9,
+    bubble2X: 204,
+    bubbleWidth: 186,
+    stemWidth: 20,
+    stemHeight: 30,
+    stemOffsetX: 15,
+    stemPointOffsetX: 2,
+    bubbleStyle: "fill:#fff; stroke:#222; stroke-width:1; stroke-linejoin:round; stroke-linecap:round;",
+    leftThoughtStemPath: "M 40 height        m 0 -4 a 14 11 0 1 0 1 1        m 0 21 a 8 7 0 1 0 1 1        m 2 14 a 4 4 0 1 0 1 1",
+    rightThoughtStemPath: "M 40 height        m 130 -4 a 14 11 0 1 0 1 1        m -10 21 a 8 7 0 1 0 1 1        m -10 14 a 4 4 0 1 0 1 1",
 
 },      // End of COMIC.constants
 
@@ -54,8 +66,8 @@ model: {
     character2Index: 8,
     panels: [ 
          {
-            bubble1: "word",
-            bubble2: "word",
+            bubble1: "thought",
+            bubble2: "thought",
             leftFaceIndex: 1,
             rightFaceIndex: 0,
             text1:"Hi! You can use this website to create your own comic!",
@@ -491,6 +503,11 @@ svg: {
         // CSS styles...
         var svg = "<style type='text/css' > <![CDATA[ #head, #shirt-front, #left-hand, #right-hand, #legs, #trouser-line, #left-shoe, #right-shoe, #left-arm, #right-arm  { stroke: #222; stroke-width: 1.4; }";
 
+        // Bubble styles
+        svg += "#bubble, #bubbleStem { ";
+        svg += COMIC.constants.bubbleStyle;
+        svg += " } ";
+
         // Text styles
         svg += "text { ";
         svg += COMIC.constants.textStyle;
@@ -605,381 +622,35 @@ svg: {
         return svg;
     },
 
-
-
-
-
-
     wordBubble: function(panelX, panelY, leftOrRight, numLines, style) {
-        if (style == "none") {
+
+        if (style == "none" || numLines == 0) {
             return "";
         }
-        if (numLines == 0) {
-            return "";
+        var svg = "<g class='wordbubble' transform='translate(";
+
+        if (leftOrRight == "left") {
+            svg += COMIC.constants.bubble1X;
         }
-        var bubbleWidth = 186;
-        var bubbleHeight = 135;
-        var bubbleX = panelX + 9;
-        var bubbleY = panelY + 5;
-        var rx = 10;
-        var ry = 10;
-        if (numLines == 1) {
-            bubbleHeight = 40;
+        else {
+            svg += COMIC.constants.bubble2X;
         }
-        else if (numLines == 2) {
-            bubbleHeight = 55;
+        svg += ", ";
+        svg += COMIC.constants.bubbleY;
+        svg += ")'>";
+
+        if (leftOrRight == "left") {
+            svg += WORD_BUBBLE(numLines, "left", style);
         }
-        else if (numLines == 3) {
-            bubbleHeight = 70;
+        else {
+            svg += WORD_BUBBLE(numLines, "right", style);
         }
-        else if (numLines == 4) {
-            bubbleHeight = 90;
-        }
-        else if (numLines == 5) {
-            bubbleHeight = 110;
-        }
-        else if (numLines == 6) {
-            bubbleHeight = 122;
-        }
-        else if (numLines == 7) {
-            bubbleHeight = 133;
-        }
-        var stemY1 = bubbleY + bubbleHeight - 2;
-        var stemY2 = bubbleY + bubbleHeight + COMIC.constants.stemHeight;
-
-        var fooX1 = 10;
-        var fooX2 = 32;
-        var fooX3 = 27;
-        var fooX4 = 26;
-        var fooX5 = 29;
-
-        var stemX1 = bubbleX + fooX1;
-        var stemX2 = bubbleX + fooX2;
-        var stemX3 = bubbleX + fooX3;
-        var stemX4 = bubbleX + fooX4;
-        var stemX5 = bubbleX + fooX5;
-
-        if (leftOrRight == "right") {
-            bubbleX = panelX + 205;
-            stemX1 = bubbleX + bubbleWidth - fooX1;
-            stemX2 = bubbleX + bubbleWidth - fooX2;
-            stemX3 = bubbleX + bubbleWidth - fooX3;
-            stemX4 = bubbleX + bubbleWidth - fooX4;
-            stemX5 = bubbleX + bubbleWidth - fooX5;
-        }
-
-        // The main bit that contains the words
-        var svg = "<rect ";
-        svg += COMIC.constants.bubbleStyle;
-        svg += " x='";
-        svg += bubbleX;
-        svg += "' y='";
-        svg += bubbleY;
-        svg += "' rx='";
-        svg += rx;
-        svg += "' ry='";
-        svg += ry;
-        svg += "' width='";
-        svg += bubbleWidth;
-        svg += "' height='";
-        svg += bubbleHeight;
-        svg += "' />";
-
-    if (style == "word") {
-            stemY2 -= 40;
-            svg += "<path ";
-            svg += COMIC.constants.bubbleStyle;
-            svg += " d='M ";
-            svg += stemX1;
-            svg += " ";
-            svg += stemY1;
-            svg += " L ";
-            svg += stemX2;
-            svg += " ";
-            svg += stemY2;
-            svg += " L ";
-            svg += stemX3;
-            svg += " ";
-            svg += stemY1;
-            svg += "' />";
-        }
-
-        // Thought bubble stems
-        else if (style == "thought") {
-
-            if (numLines == 1) {
-
-                var bubble1X = 40;
-                var bubble1Y = panelY + 130;
-
-                var bubble2X = 27;
-                var bubble2Y = panelY + 100;
-
-                var bubble3X = 20;
-                var bubble3Y = panelY + 70;
-
-                var bubble4X = 20;
-                var bubble4Y = panelY + 40;
-
-                if (leftOrRight == "right") {
-                    var farX = COMIC.constants.panelWidth;
-                    bubble1X = farX - bubble1X;
-                    bubble2X = farX - bubble2X;
-                    bubble3X = farX - bubble3X;
-                    bubble4X = farX - bubble4X;
-                }
-
-                svg += "<rect width='10' height='7' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble1X;
-                svg += "' y='";
-                svg += bubble1Y;
-                svg += "' />";
-
-                svg += "<rect width='13' height='10' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble2X;
-                svg += "' y='";
-                svg += bubble2Y;
-                svg += "' />";
-
-                svg += "<rect width='18' height='14' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble3X;
-                svg += "' y='";
-                svg += bubble3Y;
-                svg += "' />";
-
-                svg += "<rect width='20' height='16' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble4X;
-                svg += "' y='";
-                svg += bubble4Y;
-                svg += "' />";
-            }
-
-            else if (numLines == 2) {
-
-                var bubble1X = 40;
-                var bubble1Y = panelY + 120;
-
-                var bubble2X = 27;
-                var bubble2Y = panelY + 90;
-
-                var bubble4X = 20;
-                var bubble4Y = panelY + 55;
-
-                if (leftOrRight == "right") {
-                    var farX = COMIC.constants.panelWidth;
-                    bubble1X = farX - bubble1X;
-                    bubble2X = farX - bubble2X;
-                    bubble4X = farX - bubble4X;
-                }
-
-                svg += "<rect width='10' height='7' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble1X;
-                svg += "' y='";
-                svg += bubble1Y;
-                svg += "' />";
-
-                svg += "<rect width='13' height='10' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble2X;
-                svg += "' y='";
-                svg += bubble2Y;
-                svg += "' />";
-
-                svg += "<rect width='20' height='16' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble4X;
-                svg += "' y='";
-                svg += bubble4Y;
-                svg += "' />";
-            }
-
-            else if (numLines == 3) {
-                var bubble1X = 40;
-                var bubble1Y = panelY + 130;
-                var bubble2X = 27;
-                var bubble2Y = panelY + 100;
-                var bubble3X = 20;
-                var bubble3Y = panelY + 70;
-
-                if (leftOrRight == "right") {
-                    var farX = COMIC.constants.panelWidth;
-                    bubble1X = farX - bubble1X;
-                    bubble2X = farX - bubble2X;
-                    bubble3X = farX - bubble3X;
-                }
-                svg += "<rect width='10' height='7' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble1X;
-                svg += "' y='";
-                svg += bubble1Y;
-                svg += "' />";
-
-                svg += "<rect width='13' height='10' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble2X;
-                svg += "' y='";
-                svg += bubble2Y;
-                svg += "' />";
-
-                svg += "<rect width='20' height='16' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble3X;
-                svg += "' y='";
-                svg += bubble3Y;
-                svg += "' />";
-            }
-
-            else if (numLines == 4) {
-                var bubble1X = 40;
-                var bubble1Y = panelY + 120;
-                var bubble2X = 27;
-                var bubble2Y = panelY + 90;
-
-                if (leftOrRight == "right") {
-                    var farX = COMIC.constants.panelWidth;
-                    bubble1X = farX - bubble1X;
-                    bubble2X = farX - bubble2X;
-                }
-
-                svg += "<rect width='10' height='7' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble1X;
-                svg += "' y='";
-                svg += bubble1Y;
-                svg += "' />";
-
-                svg += "<rect width='20' height='16' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble2X;
-                svg += "' y='";
-                svg += bubble2Y;
-                svg += "' />";
-            }
-
-            else if (numLines == 5) {
-                var bubble1X = 40;
-                var bubble1Y = panelY + 140;
-                var bubble2X = 27;
-                var bubble2Y = panelY + 110;
-
-                if (leftOrRight == "right") {
-                    var farX = COMIC.constants.panelWidth;
-                    bubble1X = farX - bubble1X;
-                    bubble2X = farX - bubble2X;
-                }
-                svg += "<rect width='10' height='7' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble1X;
-                svg += "' y='";
-                svg += bubble1Y;
-                svg += "' />";
-
-                svg += "<rect width='20' height='16' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble2X;
-                svg += "' y='";
-                svg += bubble2Y;
-                svg += "' />";
-            }
-
-            else if (numLines == 6) {
-                var bubble1X = 40;
-                var bubble1Y = panelY + 150;
-                var bubble2X = 27;
-                var bubble2Y = panelY + 120;
-
-                if (leftOrRight == "right") {
-                    var farX = COMIC.constants.panelWidth;
-                    bubble1X = farX - bubble1X;
-                    bubble2X = farX - bubble2X;
-                }
-
-                svg += "<rect width='10' height='7' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble1X;
-                svg += "' y='";
-                svg += bubble1Y;
-                svg += "' />";
-
-                svg += "<rect width='20' height='16' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble2X;
-                svg += "' y='";
-                svg += bubble2Y;
-                svg += "' />";
-            }
-
-            else if (numLines == 7) {
-                var bubble1X = 40;
-                var bubble1Y = panelY + 150;
-                var bubble2X = 27;
-                var bubble2Y = panelY + 130;
-
-                if (leftOrRight == "right") {
-                    var farX = COMIC.constants.panelWidth;
-                    bubble1X = farX - bubble1X;
-                    bubble2X = farX - bubble2X;
-                }
-                svg += "<rect width='10' height='7' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble1X;
-                svg += "' y='";
-                svg += bubble1Y;
-                svg += "' />";
-                svg += "<rect width='20' height='15' ";
-                svg += COMIC.constants.bubbleStyle;
-                svg += " rx='10' ry='10' x='";
-                svg += bubble2X;
-                svg += "' y='";
-                svg += bubble2Y;
-                svg += "' />";
-            }
-        }       // End of thought bubbles
-
-        console.log(svg);
+        svg += "</g>";
         return svg;
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     panelSVG: function(i, singlePanel) {
 
         var text1Array = COMIC.utils.textFoo( COMIC.model.panels[i].text1, COMIC.constants.maxLineLength, COMIC.constants.maxNumLines );
-
         var text2Array = COMIC.utils.textFoo( COMIC.model.panels[i].text2, COMIC.constants.maxLineLength, COMIC.constants.maxNumLines );
 
         var numLines1 = text1Array.length;
@@ -989,6 +660,7 @@ svg: {
         if (singlePanel == true) {
             panelY = COMIC.svg.panelY(0);
         }
+
         var text1Y0 = panelY + COMIC.constants.textY;
         var text2Y0 = panelY + COMIC.constants.textY;
         var svg = "";
@@ -1027,6 +699,11 @@ svg: {
             svg += COMIC.svg.characterSVG(COMIC.model.character2Index);
             svg += "</g>";
 
+
+        // Text bubbles
+        svg += COMIC.svg.wordBubble(COMIC.constants.comicHorizontalSpace, panelY, "left", numLines1, COMIC.model.panels[i].bubble1);
+        svg += COMIC.svg.wordBubble(COMIC.constants.comicHorizontalSpace, panelY, "right", numLines2, COMIC.model.panels[i].bubble2);
+
         svg += "</g>";
 
         // Faces - left
@@ -1037,9 +714,6 @@ svg: {
         if ( COMIC_CHARACTERS[COMIC.model.character2Index].hasFaces ) {
             svg += COMIC.svg.rightFace(panelY, i);
         }
-        // Text bubbles
-        svg += COMIC.svg.wordBubble(COMIC.constants.comicHorizontalSpace, panelY, "left", numLines1, COMIC.model.panels[i].bubble1);
-        svg += COMIC.svg.wordBubble(COMIC.constants.comicHorizontalSpace, panelY, "right", numLines2, COMIC.model.panels[i].bubble2);
 
         // Loop over the substrings
         for (var j=0; j<numLines1; j++) {

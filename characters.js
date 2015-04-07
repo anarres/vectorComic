@@ -208,69 +208,31 @@ var COMIC_FACES = [
         title: 'angry',
         svg: '<path id="mouth" stroke-linejoin="round" d="m57 48 h6" stroke="#222" stroke-linecap="round" stroke-width="2" fill="none"/>  <path id="left-eyebrow" stroke-linejoin="round" d="m69.476 36.857 11.381-2.712" stroke="#222" stroke-linecap="round" stroke-width="1.5" fill="none"/>  <path id="right-eyebrow" stroke-linejoin="round" d="m49.857 36.191-11.381-2.712" stroke="#222" stroke-linecap="round" stroke-width="1.5" fill="none"/><circle id="right-eye" cx="45" cy="37.5" r="3" fill="#222" stroke="none" /> <circle id="left-eye" cx="74" cy="37.5" r="3" fill="#222" stroke="none" /> '
     },
+
 ];
 
-var wordBubbleMaker = function(width, height, stem1X, stem2X, stem2Y, stem3X) {
-    var svg = "<path d='M 0 0 L width 0 L width height L stem1X height L stem2X stem2Y L stem3X height L 0 height L 0 0' id='bubble' />";
-    svg = svg.split("width").join(width);
-    svg = svg.split("height").join(height);
-    svg = svg.replace("stem1X", stem1X);
-    svg = svg.replace("stem2X", stem2X);
-    svg = svg.replace("stem2Y", stem2Y);
-    svg = svg.replace("stem3X", stem3X);
-    return svg;
-}
+var LEFT_WORD_BUBBLE = function(numLines) {
 
-var thoughtBubbleMaker = function(width, height, leftOrRight) {
-    var svg = "<path d='M 0 0 L width 0 L width height L 0 height L 0 0' id='bubble' /><path d='";
+    if (numLines == 0) { return ""; }
 
-    if (leftOrRight == "left") {
-        svg += COMIC.constants.leftThoughtStemPath;
-    }
-    else {
-        svg += COMIC.constants.rightThoughtStemPath;
+    else if (numLines == 1) {
+        return "<rect id='bubble' x='19' y='15' width='186' height='40' /><path id='bubbleStem' d='M 29 53 L 51 81 L 46 53' />";
+     }
 
-    }
-    svg += "' id='bubbleStem' />";
-    svg = svg.split("width").join(width);
-    svg = svg.split("height").join(height);
-    return svg;
-}
+    else if (numLines == 2) {
+        
 
-var WORD_BUBBLE = function(numLines, leftOrRight, style) {
-    var stem1X = 1;
-    var stem2X = 1;
-    var stem2Y = 1;
-    var stem3X = 1;
-    var height = 133;
-    if (numLines == 1) { height = 40; }
-    else if (numLines == 2) { height = 55; }
-    else if (numLines == 3) { height = 70; }
-    else if (numLines == 4) { height = 90; }
-    else if (numLines == 5) { height = 110; }
-    else if (numLines == 6) { height = 122; }
 
-    if (leftOrRight == "left") {
-        stem3X = COMIC.constants.stemOffsetX;
-        stem2Y = height + COMIC.constants.stemHeight;
-        stem1X = stem3X +COMIC.constants.stemWidth;
-        stem2X = stem1X - COMIC.constants.stemPointOffsetX;        
-    }
-    else {
-        stem1X = COMIC.constants.bubbleWidth - COMIC.constants.stemOffsetX;
-        stem3X = stem1X - COMIC.constants.stemWidth;
-        stem2X = stem3X + COMIC.constants.stemPointOffsetX;
-        stem2Y = height + COMIC.constants.stemHeight;
-    }
+     }
 
-    if (style == "word") {
-        return wordBubbleMaker(COMIC.constants.bubbleWidth, height, stem1X, stem2X, stem2Y, stem3X);
-    }
-    else if (style == "thought") { 
-        return thoughtBubbleMaker(COMIC.constants.bubbleWidth, height, leftOrRight);
-    }
 };
+/*
 
+var RIGHT_WORD_BUBBLES = [];
 
+var LEFT_THOUGHT_BUBBLES = [];
 
+var RIGHT_THOUGHT_BUBBLES = [];
+
+*/
 

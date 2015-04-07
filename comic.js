@@ -34,8 +34,8 @@ constants: {
     maxLineLength: 22,
     maxNumLines: 7,
     lineHeight: 17,
-    textStyle: "font-family: 'Arial Black', sans-serif ; font-size: 14px; text-anchor:middle; ",
-    creditsTextStyle: "font-family: 'Arial Black', sans-serif ; font-size: 12px; text-anchor:middle; ",
+    textStyle: "font-family: 'Arial', sans-serif ; font-size: 14px; text-anchor:middle; ",
+    creditsTextStyle: "font-family: 'Arial', sans-serif ; font-size: 12px; text-anchor:middle; ",
     bubbleStyle: "fill='#fff' stroke='#888' stroke-width='1' stroke-linejoin='round' stroke-linecap='round'",
     stemHeight: 66,
 

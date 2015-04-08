@@ -1001,7 +1001,7 @@ svg: {
         svg += ")'>";
 
             // Background rectangle
-            svg += "<rect rx='4' ry='4' x='-2' y='-2' stroke='#888' stroke-width='0' width='";
+            svg += "<rect rx='4' ry='4' x='-2' y='-2' stroke='#222' stroke-width='1' width='";
             svg += COMIC.constants.panelWidth;
             svg += "' height='";
             svg += COMIC.constants.panelHeight;

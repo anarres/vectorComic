@@ -185,8 +185,12 @@ var COMIC_FACES = [
         svg: '<circle id="right-eye" cy="37.5" cx="45" r="3" fill="#222"/>  <circle id="left-eye" cy="37.5" cx="74" r="3" fill="#222"/> <path id="mouth" stroke-linejoin="round" d="m 52,48 C  54,52 67,52 69,48" stroke="#222" stroke-linecap="round" stroke-width="1.7" fill="none"/>'
     },
     {
-        title: 'embarrassed',
+        title: 'blush',
         svg: ' <circle id="right-eye" cy="37.5" cx="45" r="3" fill="#222"/>  <circle id="left-eye" cy="37.5" cx="74" r="3" fill="#222"/>  <path id="mouth" fill-rule="evenodd" fill="#222" d="m62.344 47.403a2 2 0 0 1 -4 0 2 2 0 1 1 4 0z"/> <path id="left-cheek" opacity=".3" d="m82.344 45.903a4.5 4.5 0 0 1 -9 0 4.5 4.5 0 1 1 9 0z" fill-rule="evenodd" fill="#f00"/> <path id="right-cheek" opacity=".3" d="m46.344 45.903a4.5 4.5 0 0 1 -9 0 4.5 4.5 0 1 1 9 0z" fill-rule="evenodd" fill="#f00"/>'
+    },
+    {
+        title: 'blush 2',
+        svg:  '<circle id="right-eye" cx="45" cy="37.5" r="3" fill="#222" stroke="none" /> <circle id="left-eye" cx="74" cy="37.5" r="3" fill="#222" stroke="none" /> <path id="mouth" d="M 55 49 h 12" stroke="#222" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" /> <path id="left-cheek" opacity=".3" d="m82.344 45.903a4.5 4.5 0 0 1 -9 0 4.5 4.5 0 1 1 9 0z" fill-rule="evenodd" fill="#f00"/> <path id="right-cheek" opacity=".3" d="m46.344 45.903a4.5 4.5 0 0 1 -9 0 4.5 4.5 0 1 1 9 0z" fill-rule="evenodd" fill="#f00"/>'
     },
     {
         title: 'sad',

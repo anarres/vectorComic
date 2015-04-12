@@ -174,11 +174,11 @@ var COMIC_FACES = [
     },
     {
         title: 'big grin',
-        svg: '<circle id="right-eye" cy="37.5" cx="45" r="3" fill="#222"/> <circle id="left-eye" cy="37.5" cx="74" r="3" fill="#222"/> <path id="big-grin" stroke-linejoin="round" d="m72.217 44.937c0 7.143-5.582 12.933-12.467 12.933-6.872 0-12.447-5.768-12.467-12.897l12.467-0.036z" stroke="#222" stroke-linecap="round" stroke-width="1" fill="#da938d"/>'
+        svg: '<circle id="right-eye" cy="37.5" cx="45" r="3" fill="#222"/> <circle id="left-eye" cy="37.5" cx="74" r="3" fill="#222"/> <path id="big-grin" stroke-linejoin="round" d="m72.217 44.937c0 7.143-5.582 12.933-12.467 12.933-6.872 0-12.447-5.768-12.467-12.897l12.467-0.036z" stroke="#222" stroke-linecap="round" stroke-width="1.5" fill="#da938d"/>'
     },
     {
         title: 'big laugh',
-        svg: '<path id="mouth" stroke-linejoin="round" d="m72.217 44.937c0 7.143-5.582 12.933-12.467 12.933-6.872 0-12.447-5.768-12.467-12.897l12.467-0.036z" stroke="#222" stroke-linecap="round" stroke-width="1" fill="#da938d"/>  <path id="right-eye" stroke-linejoin="round" d="m39.989 39.147c1.67-6.227 10.376-5.922 11.742 0" stroke="#222" stroke-linecap="round" stroke-width="2" fill="none"/>  <path id="left-eye" stroke-linejoin="round" d="m66.499 38.847c1.67-6.227 10.376-5.922 11.742 0" stroke="#222" stroke-linecap="round" stroke-width="2" fill="none"/>'
+        svg: '<path id="mouth" stroke-linejoin="round" d="m72.217 44.937c0 7.143-5.582 12.933-12.467 12.933-6.872 0-12.447-5.768-12.467-12.897l12.467-0.036z" stroke="#222" stroke-linecap="round" stroke-width="1.5" fill="#da938d"/>  <path id="right-eye" stroke-linejoin="round" d="m39.989 39.147c1.67-6.227 10.376-5.922 11.742 0" stroke="#222" stroke-linecap="round" stroke-width="2" fill="none"/>  <path id="left-eye" stroke-linejoin="round" d="m66.499 38.847c1.67-6.227 10.376-5.922 11.742 0" stroke="#222" stroke-linecap="round" stroke-width="2" fill="none"/>'
     },
     {
         title: 'smile',
@@ -230,13 +230,4 @@ var LEFT_WORD_BUBBLE = function(numLines) {
      }
 
 };
-/*
-
-var RIGHT_WORD_BUBBLES = [];
-
-var LEFT_THOUGHT_BUBBLES = [];
-
-var RIGHT_THOUGHT_BUBBLES = [];
-
-*/
 
